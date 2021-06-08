@@ -2,3 +2,7 @@
     background-color: #25c6fc00 !important;
     border-color:#25c6fc00 !important;
 }
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #555;
+    background-color: #25c6fc00 !important;
+}

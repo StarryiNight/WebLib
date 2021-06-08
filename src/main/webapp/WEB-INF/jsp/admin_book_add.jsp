@@ -1,16 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>图书信息添加</title>
-     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>添加图书</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/my.css">
     <script src="js/jquery-3.2.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <style>
-        .form-group {
-            margin-bottom: 0;
-        }
-    </style>
+    <script src="js/bootstrap.min.js" ></script>
     <script>
         $(function () {
             $('#header').load('admin_header.html');
@@ -21,6 +16,44 @@
         html,body{
             height:100%;
         }
+
+        input{
+          border: none;
+          width: 10%;
+          font-size: 22px;
+          padding: 10px;
+          margin-bottom: 32px;
+          border-radius: 16px;
+          background-color: transparent;
+
+          /* 注入灵魂 */
+          backdrop-filter: blur(3px);
+          border-left: 2px solid rgba(255, 255, 255, .3);
+          border-top: 2px solid rgba(255, 255, 255, .3);
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+
+          text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+          font-family: "Berlin Sans FB";
+          color: white;
+          /* 只能控制输入的文本的颜色 */
+        }
+        input:focus{
+          border: none;
+          background-color: rgba(255, 255, 255, .1);
+          /* 注入灵魂 */
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+          border-right: 2px solid rgba(255, 255, 255, .3);
+          border-bottom: 2px solid rgba(255, 255, 255, .3);
+          box-shadow:inset 2px 2px 2px rgba(0, 0, 0, .2);
+        }
+        * {
+                    padding:0;
+                    margin:0;
+                    outline: none;
+                      /* 让输入框被选中后没有默认框框 */
+                      user-select: none;
+                      /* 用户不能选中文本，整体性更强 */
+                }
         body{
             margin: 0;
             padding: 0;
@@ -47,60 +80,71 @@
 <body >
 
 <div id="header"></div>
-<div style="position: relative;padding-top: 60px; width: 80%;margin-left: 10%">
-    <form action="book_add_do.html" method="post" id="addbook">
-        <div class="form-group">
-            <label for="name">图书名</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="请输入书名">
+<div class="col-xs-6 col-md-offset-3" style="padding-top: 100px;position: relative">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">添加图书</h3>
         </div>
-        <div class="form-group">
-            <label for="author">作者</label>
-            <input type="text" class="form-control" name="author" id="author" placeholder="请输入作者名">
-        </div>
-        <div class="form-group">
-            <label for="publish">出版社</label>
-            <input type="text" class="form-control" name="publish" id="publish" placeholder="请输入出版社">
-        </div>
-        <div class="form-group">
-            <label for="isbn">ISBN</label>
-            <input type="text" class="form-control" name="isbn" id="isbn" placeholder="请输入ISBN">
-        </div>
-        <div class="form-group">
-            <label for="introduction">简介</label>
-            <textarea class="form-control" rows="3" name="introduction" id="introduction"
-                      placeholder="请输入简介"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="language">语言</label>
-            <input type="text" class="form-control" name="language" id="language" placeholder="请输入语言">
-        </div>
-        <div class="form-group">
-            <label for="price">价格</label>
-            <input type="text" class="form-control" name="price" id="price" placeholder="请输入价格">
-        </div>
-        <div class="form-group">
-            <label for="pubstr">出版日期</label>
-            <input type="date" class="form-control" name="pubstr" id="pubstr" placeholder="请输入出版日期">
-        </div>
-        <div class="form-group">
-            <label for="classId">分类号</label>
-            <input type="text" class="form-control" name="classId" id="classId" placeholder="请输入分类号">
-        </div>
-        <div class="form-group">
-            <label for="number">数量</label>
-            <input type="text" class="form-control" name="number" id="number" placeholder="请输入图书数量">
-        </div>
+        <div class="panel-body">
+            <form action="reader_add_do.html" method="post" id="readeredit" >
+                <div class="input-group" style="padding-top: 20px;">
+                   <span  class="input-group-addon">图书名</span>
+                           <input  type="text" class="form-control" name="name" id="name" >
+                </div>
+                <div class="input-group" style="padding-top: 20px;">
+                    <span  class="input-group-addon">作者</span>
+                            <input  type="text" class="form-control" name="author" id="author" >
+                </div>
+                <div class="input-group" style="padding-top: 20px;">
+                    <span  class="input-group-addon">出版社</span>
+                           <input  type="text" class="form-control" name="publish" id="publish" >
+                </div>
+                <div class="input-group" style="padding-top: 20px;">
+                   <span  class="input-group-addon">ISBN</span>
+                           <input  type="text" class="form-control" name="isbn" id="isbn" >
+                </div>
+                <div class="input-group" style="padding-top: 20px;">
+              <span  class="input-group-addon">简介</span>
+                     <input  type="textarea" class="form-control" rows="3" name="introduction" id="introduction" >
 
-        <input type="submit" value="添加" class="btn btn-success btn-sm" class="text-left">
-        <script>
-            $("#addbook").submit(function () {
-                if ($("#name").val() == '' || $("#author").val() == '' || $("#publish").val() == '' || $("#isbn").val() == '' || $("#introduction").val() == '' || $("#language").val() == '' || $("#price").val() == '' || $("#pubstr").val() == '' || $("#classId").val() == '' || $("#pressmark").val() == '' || $("#number").val() == '') {
-                    alert("请填入完整图书信息！");
-                    return false;
-                }
-            })
-        </script>
-    </form>
+                </div>
+                <div class="input-group" style="padding-top: 20px;">
+                    <span  class="input-group-addon">语言</span>
+                           <input  type="text" class="form-control" name="language" id="language" >
+                </div>
+                <div class="input-group" style="padding-top: 20px;">
+                   <span  class="input-group-addon">价格</span>
+                    <input  type="text" class="form-control" name="price" id="price">
+                </div>
+                <div class="input-group" style="padding-top: 20px;">
+                 <span  class="input-group-addon">出版日期</span>
+                  <input  type="date" class="form-control" name="pubstr" id="pubstr" >
+                 </div>
+                 <div class="input-group" style="padding-top: 20px;">
+                   <span  class="input-group-addon">分类号</span>
+                 <input  type="text" class="form-control" name="classId" id="classId">
+                 </div>
+                 <div class="input-group" style="padding-top: 20px;">
+                   <span  class="input-group-addon">>数量</span>
+                  <input  type="text" class="form-control" name="number" id="number">
+                  </div>
+                  <center>
+                <input style="align-items: center" type="submit" value="添加" class="btn btn-success btn-sm"
+                       class="text-left">
+                       </center>
+               <script>
+                       $("#addbook").submit(function () {
+                       if ($("#name").val() == '' || $("#author").val() == '' || $("#publish").val() == '' || $("#isbn").val() == '' || $("#introduction").val() == '' || $("#language").val() == '' || $("#price").val() == '' || $("#pubstr").val() == '' || $("#classId").val() == '' || $("#pressmark").val() == '' || $("#number").val() == '') {
+                       alert("请填入完整图书信息！");
+                       return false;
+                       }
+                       })
+                       </script>
+            </form>
+        </div>
+    </div>
+
 </div>
+
 </body>
 </html>

@@ -8,4 +8,5 @@
         select * from record
         where reader_id=#{reader_id}
     </select>
+
 </mapper>

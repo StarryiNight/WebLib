@@ -57,4 +57,6 @@ public class SeatController {
         modelAndView.addObject("seat", seatService.mySeatList(readerCard.getReaderId()));
         return modelAndView;
     }
+
+
 }
