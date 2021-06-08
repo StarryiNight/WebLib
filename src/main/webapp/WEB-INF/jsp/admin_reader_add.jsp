@@ -66,6 +66,10 @@
                     <input type="date" class="form-control" name="birth" id="birth"  >
                 </div>
                 <div class="input-group" style="padding-top: 20px;">
+                                    <span class="input-group-addon">会员等级</span>
+                                    <input type="integer" class="form-control" name="level" id="level"  >
+                </div>
+                <div class="input-group" style="padding-top: 20px;">
                     <span  class="input-group-addon">地址</span>
                     <input type="text" class="form-control" name="address" id="address"  >
                 </div>
@@ -80,7 +84,7 @@
                         return flag;
                     }
                     $("#readeredit").submit(function () {
-                        if($("#password").val()==''||$("#name").val()==''||$("#sex").val()==''||$("#birth").val()==''||$("#address").val()==''||$("#phone").val()==''){
+                        if($("#password").val()==''||$("#name").val()==''||$("#sex").val()==''||$("#birth").val()==''||$("#level").val()==''||$("#address").val()==''||$("#phone").val()==''){
                             alert("请填入完整读者信息！");
                             return mySubmit(false);
                         }

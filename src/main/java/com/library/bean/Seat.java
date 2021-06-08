@@ -3,31 +3,24 @@ package com.library.bean;
 import java.io.Serializable;
 
 public class Seat implements Serializable {
-    private int seat_id;
-    private int room_id;
-    private boolean available;
+    private long seat_id;
+    private long room_id;
 
-    public int getSeat_id() {
+
+    public long getSeat_id() {
         return seat_id;
     }
 
-    public void setSeat_id(int seat_id) {
+    public void setSeat_id(long seat_id) {
         this.seat_id = seat_id;
     }
 
-    public int getRoom_id() {
+    public long getRoom_id() {
         return room_id;
     }
 
-    public void setRoom_id(int room_id) {
+    public void setRoom_id(long room_id) {
         this.room_id = room_id;
     }
 
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public void setAvailable(boolean available) {
-        this.available = available;
-    }
 }

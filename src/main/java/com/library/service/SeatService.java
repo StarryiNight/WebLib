@@ -12,15 +12,19 @@ public class SeatService {
     @Autowired
     private SeatDao seatDao;
 
-    public boolean deleteSeat(int seatId) {
+    public boolean deleteSeat(long seatId) {
         return seatDao.deleteSeat(seatId) > 0;
     }
 
-    public boolean addSeat(int seatId, int roomId) {
+    public boolean addSeat(long seatId, long roomId) {
         return seatDao.addSeat(seatId, roomId) > 0;
     }
 
     public ArrayList<Seat> seatList() {
         return seatDao.seatList();
+    }
+
+    public ArrayList<Seat> mySeatList(long readerId) {
+        return seatDao.mySeatList(readerId);
     }
 }

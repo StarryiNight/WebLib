@@ -39,7 +39,7 @@
         }
     </style>
 </head>
-<body >
+<body>
 <div id="header" style="padding-bottom: 80px"></div>
 <div class="col-xs-6 col-md-offset-3" style="position: relative;">
     <div class="panel panel-primary">
@@ -59,6 +59,10 @@
                 <div class="input-group">
                     <span class="input-group-addon">生日</span>
                     <input type="text" class="form-control" name="birth" id="birth"  value="${readerInfo.birth}" >
+                </div>
+                <div class="input-group">
+                                    <span class="input-group-addon">会员等级</span>
+                                    <input type="text" class="form-control" name="level" id="level"  value="${readerInfo.level}" >
                 </div>
                 <div class="input-group">
                     <span  class="input-group-addon">地址</span>

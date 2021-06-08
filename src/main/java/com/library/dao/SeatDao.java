@@ -16,16 +16,16 @@ public class SeatDao {
     @Resource
     private SqlSessionTemplate sqlSessionTemplate;
 
-    private final static String NAMESPACE = "com.library.dao.SeatDao";
+    private final static String NAMESPACE = "com.library.dao.SeatDao.";
 
-    public int addSeat(final int seat_id, final int room_id) {
+    public long addSeat(final long seat_id, final long room_id) {
         Map<String, Object> map = new HashMap<>();
         map.put("seat_id", seat_id);
         map.put("room_id", room_id);
         return sqlSessionTemplate.insert(NAMESPACE + "addSeat", map);
     }
 
-    public int deleteSeat(final int seat_id) {
+    public int deleteSeat(final long seat_id) {
         return sqlSessionTemplate.delete(NAMESPACE + "deleteSeat", seat_id);
     }
 
@@ -33,6 +33,12 @@ public class SeatDao {
         List<Seat> result = sqlSessionTemplate.selectList(NAMESPACE + "seatList");
         return (ArrayList<Seat>) result;
     }
+
+    public ArrayList<Seat> mySeatList(final long reader_id) {
+        List<Seat> result = sqlSessionTemplate.selectList(NAMESPACE + "mySeatList", reader_id);
+        return (ArrayList<Seat>) result;
+    }
+
 
 
 
