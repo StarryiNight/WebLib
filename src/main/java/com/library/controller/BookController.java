@@ -59,13 +59,7 @@ public class BookController {
         }
     }
 
-    @RequestMapping("/admin_books.html")
-    public ModelAndView adminBooks() {
-        ArrayList<Book> books = bookService.getAllBooks();
-        ModelAndView modelAndView = new ModelAndView("admin_books");
-        modelAndView.addObject("books", books);
-        return modelAndView;
-    }
+
 
     @RequestMapping("/book_add.html")
     public ModelAndView addBook() {
@@ -129,6 +123,14 @@ public class BookController {
     @RequestMapping("/reader_header.html")
     public ModelAndView reader_header() {
         return new ModelAndView("reader_header");
+    }
+
+    @RequestMapping("/admin_books.html")
+    public ModelAndView adminBooks() {
+        ArrayList<Book> books = bookService.getAllBooks();
+        ModelAndView modelAndView = new ModelAndView("admin_books");
+        modelAndView.addObject("books", books);
+        return modelAndView;
     }
 
     @RequestMapping("/reader_books.html")
