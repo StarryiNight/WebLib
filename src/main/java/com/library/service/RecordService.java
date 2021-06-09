@@ -30,7 +30,7 @@ public class RecordService {
     }
 
     public boolean deleteRecord(Long bookId) {
-        return recordDao.deleteBook(bookId) > 0;
+        return recordDao.deleteRecord(bookId) > 0;
     }
 
 }

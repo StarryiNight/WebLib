@@ -5,8 +5,6 @@ Y
 )src/main/java/com/library/bean/Admin.java,4\c\4c7a6f632a117e79c1b8a6929d38b7e0c73f1c0b
 ^
 .src/main/webapp/WEB-INF/jsp/admin_repasswd.jsp,1\a\1a8722223bd965b081dacf562b456acfe42423ed
-_
-/src/main/webapp/WEB-INF/jsp/admin_lend_list.jsp,0\d\0d66e61a58ae3225bdd65f9d3c9a13c1a10f16ba
 ]
 -src/main/webapp/WEB-INF/jsp/admin_readers.jsp,9\5\9589d4ea36475caef1daff841bbb8fbd1d544fe6
 a
