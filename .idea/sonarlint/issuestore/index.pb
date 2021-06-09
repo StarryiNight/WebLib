@@ -7,8 +7,6 @@ Y
 .src/main/webapp/WEB-INF/jsp/admin_repasswd.jsp,1\a\1a8722223bd965b081dacf562b456acfe42423ed
 _
 /src/main/webapp/WEB-INF/jsp/admin_lend_list.jsp,0\d\0d66e61a58ae3225bdd65f9d3c9a13c1a10f16ba
-\
-,src/main/webapp/WEB-INF/jsp/admin_header.jsp,6\6\661c72993436d6479e1577790fb83360c65ba670
 ]
 -src/main/webapp/WEB-INF/jsp/admin_readers.jsp,9\5\9589d4ea36475caef1daff841bbb8fbd1d544fe6
 a
@@ -23,7 +21,5 @@ i
 9src/main/java/com/library/controller/LoginController.java,1\d\1d05284b1810b29dd9c511c1c4b5d20a26f7e444
 [
 +src/main/webapp/WEB-INF/jsp/admin_seats.jsp,3\e\3e0079d6c50ad5e0044413de5ab96db1063d0acd
-Z
-*src/main/java/com/library/dao/SeatDao.java,4\e\4e26d95d60ed9e187599c9ca4bb293b69e2ca541
 ]
 -src/main/java/com/library/dao/RecoderDao.java,c\0\c0de622f7d21ee35b336bd821a8c0eadc773d797

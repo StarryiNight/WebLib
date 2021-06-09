@@ -12,7 +12,6 @@ import java.util.Map;
 
 @Repository
 public class SeatDao {
-
     @Resource
     private SqlSessionTemplate sqlSessionTemplate;
 
@@ -38,9 +37,5 @@ public class SeatDao {
         List<Seat> result = sqlSessionTemplate.selectList(NAMESPACE + "mySeatList", reader_id);
         return (ArrayList<Seat>) result;
     }
-
-
-
-
 
 }

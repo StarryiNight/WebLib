@@ -4,4 +4,9 @@
     <select id="seatList" resultType="com.library.bean.Seat" >
         select * from seat
     </select>
+    <select id="mySeatList" resultType="com.library.bean.Seat" parameterType="long">
+        select * from record
+        where reader_id=#{reader_id}
+    </select>
+
 </mapper>

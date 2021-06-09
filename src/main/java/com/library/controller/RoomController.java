@@ -15,7 +15,7 @@ public class RoomController {
     @Autowired
     private RoomService roomService;
 
-    @RequestMapping("/admin_roomlist.html")
+    @RequestMapping("/admin_room_list.html")
     private ModelAndView AdminRoomList() {
         ModelAndView modelAndView = new ModelAndView("admin_room_list");
         modelAndView.addObject("rooms", roomService.roomList());
@@ -24,7 +24,7 @@ public class RoomController {
 
     @RequestMapping("/updateroom.html")
     public ModelAndView roomEdit(HttpServletRequest request) {
-        long roomId = Long.parseLong(request.getParameter("roomId"));
+        long roomId = Long.parseLong(request.getParameter("room_id"));
         Room room = roomService.getRoom(roomId);
         ModelAndView modelAndView = new ModelAndView("admin_room_edit");
         modelAndView.addObject("detail", room);
@@ -38,7 +38,7 @@ public class RoomController {
         } else {
             redirectAttributes.addFlashAttribute("error", "阅览室修改失败！");
         }
-        return "redirect:/admin_roomlist.html";
+        return "redirect:/admin_room_list.html";
     }
 
     @RequestMapping("/reader_roomlist.html")
@@ -60,12 +60,12 @@ public class RoomController {
         } else {
             redirectAttributes.addFlashAttribute("error", "阅览室添加失败！");
         }
-        return "redirect:/admin_roomlist.html";
+        return "redirect:/admin_room_list.html";
     }
 
     @RequestMapping("/admin_room_detail.html")
     public ModelAndView adminRoomDetail(HttpServletRequest request) {
-        long roomId = Long.parseLong(request.getParameter("roomId"));
+        long roomId = Long.parseLong(request.getParameter("room_id"));
         Room room = roomService.getRoom(roomId);
         ModelAndView modelAndView = new ModelAndView("admin_room_detail");
         modelAndView.addObject("detail", room);
@@ -73,8 +73,8 @@ public class RoomController {
     }
 
     @RequestMapping("/reader_room_detail.html")
-    public ModelAndView readerBookDetail(HttpServletRequest request) {
-        long roomId = Long.parseLong(request.getParameter("roomId"));
+    public ModelAndView RoomDetail(HttpServletRequest request) {
+        long roomId = Long.parseLong(request.getParameter("room_id"));
         Room room = roomService.getRoom(roomId);
         ModelAndView modelAndView = new ModelAndView("reader_room_detail");
         modelAndView.addObject("detail", room);
@@ -83,13 +83,13 @@ public class RoomController {
 
     @RequestMapping("/deleteroom.html")
     public String deleteRoom(HttpServletRequest request, RedirectAttributes redirectAttributes) {
-        long roomId = Long.parseLong(request.getParameter("roomId"));
+        long roomId = Long.parseLong(request.getParameter("room_id"));
         if (roomService.deleteRoom(roomId)) {
             redirectAttributes.addFlashAttribute("succ", "阅览室删除成功！");
         } else {
             redirectAttributes.addFlashAttribute("error", "阅览室删除失败！");
         }
-        return "redirect:/admin_roomlist.html";
+        return "redirect:/admin_room_list.html";
     }
 
 }

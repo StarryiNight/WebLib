@@ -14,7 +14,7 @@ public class RoomDao {
     @Resource
     private SqlSessionTemplate sqlSessionTemplate;
 
-    public final static String NAMESPACE = "com.library.dao.RoomDAO.";
+    public final static String NAMESPACE = "com.library.dao.RoomDao.";
 
     public ArrayList<Room> roomList() {
         List<Room> result = sqlSessionTemplate.selectList(NAMESPACE + "roomList");
@@ -34,7 +34,7 @@ public class RoomDao {
     }
 
     public Room getRoom(final long roomId) {
-        return sqlSessionTemplate.selectOne(NAMESPACE + "addBook", roomId);
+        return sqlSessionTemplate.selectOne(NAMESPACE + "getRoom", roomId);
     }
 
 }

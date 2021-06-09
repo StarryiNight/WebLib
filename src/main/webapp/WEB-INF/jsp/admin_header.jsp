@@ -18,17 +18,29 @@
                         <li><a href="book_add.html">增加图书</a></li>
                     </ul>
                 </li>
+                 <li class="dropdown">
+                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">
+                                         读者管理
+                                         <b class="caret"></b>
+                                     </a>
+                                     <ul class="dropdown-menu">
+                                         <li><a href="allreaders.html">全部读者</a></li>
+                                         <li class="divider"></li>
+                                         <li><a href="reader_add.html">增加读者</a></li>
+                                     </ul>
+                                 </li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">
-                        读者管理
+                        座位管理
                         <b class="caret"></b>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="allreaders.html">全部读者</a></li>
-                        <li class="divider"></li>
-                        <li><a href="reader_add.html">增加读者</a></li>
-                    </ul>
-                </li>
+                         <ul class="dropdown-menu">
+                          <li><a href="admin_room_list.html">阅览室</a></li>
+                          <li class="divider"></li>
+                          <li><a href="room_add.html">增加阅览室</a></li>
+                          </ul>
+                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">
                         借还管理

@@ -7,5 +7,18 @@
         where record.seat_id=seat.seat_id and seat.room_id=room.room_id
         GROUP BY room.room_id
     </select>
-
+    <insert id="addRoom" parameterType="com.library.bean.Room">
+        insert into room values
+        (#{room_id},#{location},#{seat_sum})
+    </insert>
+    <select id="getRoom" resultType="com.library.bean.Room"  parameterType="long">
+        select * from room where room_id=#{room_id}
+    </select>
+    <update id="editRoom" parameterType="com.library.bean.Room">
+        update room set room_id=#{room_id}, location=#{location}, seat_sum=#{seat_sum}
+        where room_id= #{room_id}
+    </update>
+    <delete id="deleteRoom" parameterType="long">
+        delete from room where room_id=#{room_id}
+    </delete>
 </mapper>
