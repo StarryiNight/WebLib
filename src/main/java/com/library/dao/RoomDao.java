@@ -29,12 +29,12 @@ public class RoomDao {
         return sqlSessionTemplate.update(NAMESPACE + "editRoom", room);
     }
 
-    public int deleteRoom(final long roomId) {
-        return sqlSessionTemplate.delete(NAMESPACE + "deleteRoom", roomId);
+    public int deleteRoom(final long room_id) {
+        return sqlSessionTemplate.delete(NAMESPACE + "deleteRoom", room_id);
     }
 
-    public Room getRoom(final long roomId) {
-        return sqlSessionTemplate.selectOne(NAMESPACE + "getRoom", roomId);
+    public Room getRoom(final long room_id) {
+        return sqlSessionTemplate.selectOne(NAMESPACE + "getRoom", room_id);
     }
 
 }

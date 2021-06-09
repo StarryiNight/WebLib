@@ -16,15 +16,19 @@ public class SeatService {
         return seatDao.deleteSeat(seatId) > 0;
     }
 
-    public boolean addSeat(long seatId, long roomId) {
-        return seatDao.addSeat(seatId, roomId) > 0;
+    public boolean addSeat(long num,long seat_id,long room_id) {
+        return seatDao.addSeat(num,seat_id,room_id)==num;
     }
 
     public ArrayList<Seat> seatList() {
         return seatDao.seatList();
     }
 
-    public ArrayList<Seat> mySeatList(long readerId) {
-        return seatDao.mySeatList(readerId);
+    public Seat getSeat(long seat_id) {
+        return seatDao.getSeat(seat_id);
+    }
+
+    public boolean editSeat(Seat seat) {
+        return seatDao.eidtSeat(seat) > 0;
     }
 }

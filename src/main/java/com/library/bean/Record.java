@@ -8,6 +8,7 @@ public class Record {
     long recorder_id;
     Date start_time;
     Date end_time;
+    Date sign_time;
 
     public long getRecord_id() {
         return record_id;

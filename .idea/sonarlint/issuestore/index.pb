@@ -11,15 +11,7 @@ _
 -src/main/webapp/WEB-INF/jsp/admin_readers.jsp,9\5\9589d4ea36475caef1daff841bbb8fbd1d544fe6
 a
 1src/main/webapp/WEB-INF/jsp/admin_reader_edit.jsp,a\d\ad560f4a76d592df57d1471861b087bc63befd33
-c
-3src/main/java/com/library/service/LoginService.java,3\a\3a05ced496350e8d8435fed278333de8a813c403
-[
-+src/main/java/com/library/dao/AdminDao.java,4\9\49ea885571b1adfeb2f4bf292c99c9c94b672823
 [
 +src/main/webapp/WEB-INF/jsp/admin_books.jsp,9\5\953c167bb1fc0a49e67e16c69f9a9fd21476744e
-i
-9src/main/java/com/library/controller/LoginController.java,1\d\1d05284b1810b29dd9c511c1c4b5d20a26f7e444
 [
 +src/main/webapp/WEB-INF/jsp/admin_seats.jsp,3\e\3e0079d6c50ad5e0044413de5ab96db1063d0acd
-]
--src/main/java/com/library/dao/RecoderDao.java,c\0\c0de622f7d21ee35b336bd821a8c0eadc773d797

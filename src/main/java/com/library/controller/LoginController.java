@@ -41,8 +41,8 @@ public class LoginController {
 
 
     @RequestMapping(value = "/api/loginCheck", method = RequestMethod.POST)
-    public @ResponseBody
-    Object loginCheck(HttpServletRequest request) {
+    @ResponseBody
+    public Object loginCheck(HttpServletRequest request) {
         long id = Long.parseLong(request.getParameter("id"));
         String passwd = request.getParameter("passwd");
         boolean isReader = loginService.hasMatchReader(id, passwd);
