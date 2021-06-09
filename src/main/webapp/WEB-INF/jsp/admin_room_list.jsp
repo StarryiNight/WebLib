@@ -91,7 +91,7 @@
                     <td><c:out value="${room.location}"></c:out></td>
                     <td><c:out value="${room.seat_sum}"></c:out></td>
                     <td><c:out value="${room.seat_available}"></c:out></td>
-                    <td><a href="admin_room_detail.html?room_id=<c:out value="${room.room_id}"></c:out>">
+                    <td><a href="admin_room_seats.html?room_id=<c:out value="${room.room_id}"></c:out>">
                     <button type="button" class="btn btn-success btn-xs">详情</button>
                     </a></td>
                     <td><a href="updateroom.html?room_id=<c:out value="${room.room_id}"></c:out>"><button type="button" class="btn btn-info btn-xs">编辑</button></a></td>

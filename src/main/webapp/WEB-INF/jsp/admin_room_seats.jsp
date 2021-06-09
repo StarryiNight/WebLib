@@ -71,7 +71,7 @@
 <div class="panel panel-default" style="position:relative;top: 80px;width: 90%;margin-left: 5%">
     <div class="panel-heading">
         <h3 class="panel-title">
-            阅览室ID
+            阅览室 ${detail.room_id}
         </h3>
     </div>
     <div class="panel-body">
@@ -85,13 +85,13 @@
             <tbody>
             <c:forEach items="${seats}" var="seat">
                 <tr>
-                    <td><c:out value="${seat.room_id}"></c:out></td>
-                    <td><c:out value="${room.location}"></c:out></td>
-                    <td><a href="admin_seats.html?room_id=<c:out value="${room.room_id}"></c:out>">
+                    <td><c:out value="${seat.seat_id}"></c:out></td>
+                    <td><c:out value="${seat.没有}"></c:out></td>
+                    <td><a href="admin_seats.html?seat_id=<c:out value="${seat.seat_id}"></c:out>">
                     <button type="button" class="btn btn-success btn-xs">详情</button>
                     </a></td>
-                    <td><a href="updatebook.html?room_id=<c:out value="${book.bookId}"></c:out>"><button type="button" class="btn btn-info btn-xs">编辑</button></a></td>
-                    <td><a href="deletebook.html?room_id=<c:out value="${book.bookId}"></c:out>"><button type="button" class="btn btn-danger btn-xs">删除</button></a></td>
+                    <td><a href="updateseat.html?seat_id=<c:out value="${seat.seat_id}"></c:out>"><button type="button" class="btn btn-info btn-xs">编辑</button></a></td>
+                    <td><a href="deleteseat.html?seat_id=<c:out value="${seat.seat_id}"></c:out>"><button type="button" class="btn btn-danger btn-xs">删除</button></a></td>
                     </tr>
                     </c:forEach>
             </tbody>

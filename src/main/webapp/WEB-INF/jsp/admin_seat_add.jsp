@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>添加阅览室</title>
+    <title>添加座位</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/my.css">
     <script src="js/jquery-3.2.1.js"></script>
@@ -83,21 +83,17 @@
 <div class="col-xs-6 col-md-offset-3" style="padding-top: 100px;position: relative">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h3 class="panel-title">添加阅览室</h3>
+            <h3 class="panel-title">添加座位</h3>
         </div>
         <div class="panel-body">
-            <form action="room_add_do.html" method="post" id="readeredit" >
+            <form action="seat_add_do.html" method="post" id="seatedit" >
                 <div class="input-group" style="padding-top: 20px;">
-                   <span  class="input-group-addon">阅览室ID</span>
-                           <input  type="text" class="form-control" name="name" id="name" >
+                   <span  class="input-group-addon">座位ID</span>
+                   <input  type="text" class="form-control" name="seat_id" id="seat_id" >
                 </div>
                 <div class="input-group" style="padding-top: 20px;">
-                    <span  class="input-group-addon">位置</span>
-                            <input  type="text" class="form-control" name="author" id="author" >
-                </div>
-                <div class="input-group" style="padding-top: 20px;">
-                    <span  class="input-group-addon">座位数量</span>
-                           <input  type="text" class="form-control" name="publish" id="publish" >
+                    <span  class="input-group-addon">数量</span>
+                    <input  type="text" class="form-control" name="num" id="num" >
                 </div>
                  <center>
                 <input style="align-items: center" type="submit" value="添加" class="btn btn-success btn-sm"
@@ -105,7 +101,7 @@
                  </center>
                <script>
                        $("#addbook").submit(function () {
-                       if ($("#room_id").val() == '' || $("#location").val() == '' || $("#seat_sum").val() == '' ) {
+                       if ($("#seat_id").val() == '' || $("#num").val() == '' ) {
                        alert("请填入完整阅览室信息！");
                        return false;
                        }
@@ -114,7 +110,6 @@
             </form>
         </div>
     </div>
-
 </div>
 
 </body>

@@ -63,6 +63,7 @@ public class SeatController {
         return modelAndView;
     }
 
+    @RequestMapping("/seat_edit_do.html")
     public String seatEditDo(Seat seat, RedirectAttributes redirectAttributes) {
         if (seatService.editSeat(seat)) {
             redirectAttributes.addFlashAttribute("succ", "座位修改成功！");
