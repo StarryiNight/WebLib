@@ -80,8 +80,8 @@
             <c:forEach items="${list}" var="alog">
                 <tr>
                     <td><c:out value="${alog.bookId}"></c:out></td>
-                    <td><c:out value="${alog.lendDate}"></c:out></td>
-                    <td><c:out value="${alog.backDate}"></c:out></td>
+                    <td><fmt:formatDate value="${alog.lendDate}" pattern="yyyy-MM-dd"/></td>
+                    <td><fmt:formatDate value="${alog.backDate}" pattern="yyyy-MM-dd"/></td>
                     <c:if test="${empty alog.backDate}">
                         <td>未还</td>
                     </c:if>

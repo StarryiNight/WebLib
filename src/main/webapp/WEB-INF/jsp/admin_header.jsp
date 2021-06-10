@@ -32,7 +32,7 @@
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">
-                        座位管理
+                        阅览室管理
                         <b class="caret"></b>
                     </a>
                          <ul class="dropdown-menu">

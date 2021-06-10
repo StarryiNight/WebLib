@@ -32,8 +32,8 @@ public class SeatService {
         return seatDao.editSeat(seat) > 0;
     }
 
-    public ArrayList<Seat> roomSeatAvailable(final long room_id) {
-        return seatDao.roomSeatAvailable(room_id);
+    public ArrayList<Seat> roomSeatUsed(final long room_id) {
+        return seatDao.roomSeatUsed(room_id);
     }
 
     public ArrayList<Seat> roomSeatList(final long room_id) {

@@ -50,10 +50,10 @@ public class SeatController {
     public ModelAndView adminRoomDetail(HttpServletRequest request) {
         long room_id = Long.parseLong(request.getParameter("room_id"));
         ArrayList<Seat> seats = seatService.roomSeatList(room_id);
-        ArrayList<Seat> availableSeats = seatService.roomSeatAvailable(room_id);
+        ArrayList<Seat> usedSeats = seatService.roomSeatUsed(room_id);
         ModelAndView modelAndView = new ModelAndView("admin_room_seats");
         modelAndView.addObject("seats", seats);
-        modelAndView.addObject("availableSeats", availableSeats);
+        modelAndView.addObject("usedSeats", usedSeats);
         return modelAndView;
     }
 

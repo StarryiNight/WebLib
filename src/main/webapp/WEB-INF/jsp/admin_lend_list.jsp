@@ -15,7 +15,6 @@
         })
     </script>
     <style type="text/css">
-
         html,body{
             height:100%;
         }
@@ -27,8 +26,6 @@
             background-size: 400%;
             animation: bganimation 15s infinite;
         }
-
-
         @keyframes bganimation {
             0%{
                 background-position: 0% 50%;

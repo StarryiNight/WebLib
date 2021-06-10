@@ -45,7 +45,7 @@
 <div style="padding: 20px 550px 10px">
     <form method="post" action="reader_querybook_do.html" class="form-inline" id="searchform">
         <div class="input-group">
-            <input type="text" placeholder="输入图书名" class="form-control" id="search" name="searchWord"
+            <input type="text" placeholder="输入阅览室ID" class="form-control" id="search" name="searchWord"
                    class="form-control">
             <span class="input-group-btn">
                 <input type="submit" value="搜索" class="btn btn-default">
@@ -105,30 +105,7 @@
                     <td><c:out value="${room.location}"></c:out></td>
                     <td><c:out value="${room.seat_sum}"></c:out></td>
                     <td><c:out value="${room.seat_available}"></c:out></td>
-                    <c:set var="flag" value="false"/>
-                    <c:forEach var="lend" items="${myLendList}">
-                        <c:if test="${lend eq book.bookId}">
-                            <c:set var="flag" value="true"/>
-                        </c:if>
-                    </c:forEach>
-                    <c:if test="${flag}">
-                        <td><a href="returnbook.html?bookId=<c:out value="${book.bookId}"></c:out>">
-                            <button type="button" class="btn btn-danger btn-xs">归还</button>
-                        </a></td>
-                    </c:if>
-                    <c:if test="${not flag}">
-                        <c:if test="${book.number>0}">
-                            <td><a href="lendbook.html?bookId=<c:out value="${book.bookId}"></c:out>">
-                                <button type="button" class="btn btn-primary btn-xs">借阅</button>
-                            </a></td>
-                        </c:if>
-                        <c:if test="${book.number==0}">
-                            <td>
-                                <button type="button" class="btn btn-defalut btn-xs" disabled="disabled">已空</button>
-                            </td>
-                        </c:if>
-                    </c:if>
-                    <td><a href="reader_book_detail.html?bookId=<c:out value="${book.bookId}"></c:out>">
+                    <td><a href="reader_room_seats.html?room_id=<c:out value="${room.room_id}"></c:out>">
                         <button type="button" class="btn btn-success btn-xs">详情</button>
                     </a></td>
                 </tr>
@@ -137,6 +114,5 @@
         </table>
     </div>
 </div>
-
 </body>
 </html>

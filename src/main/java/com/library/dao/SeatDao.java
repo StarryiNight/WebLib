@@ -46,13 +46,13 @@ public class SeatDao {
         return sqlSessionTemplate.selectOne(NAMESPACE + "getSeat", seat_id);
     }
 
-    public ArrayList<Seat> roomSeatAvailable(final long room_id) {
-        List<Seat> result = sqlSessionTemplate.selectList(NAMESPACE + "seatAvailable", room_id);
+    public ArrayList<Seat> roomSeatUsed(final long room_id) {
+        List<Seat> result = sqlSessionTemplate.selectList(NAMESPACE + "roomSeatUsed", room_id);
         return (ArrayList<Seat>) result;
     }
 
     public ArrayList<Seat> roomSeatList(final long room_id) {
-        List<Seat> result = sqlSessionTemplate.selectList(NAMESPACE + "seatAvailable", room_id);
+        List<Seat> result = sqlSessionTemplate.selectList(NAMESPACE + "roomSeatList", room_id);
         return (ArrayList<Seat>) result;
     }
 }

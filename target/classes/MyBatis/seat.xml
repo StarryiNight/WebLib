@@ -19,4 +19,15 @@
         insert into seat values
         (#{seat_id},#{room_id})
     </insert>
+    <select id="roomSeatList" resultType="com.library.bean.Seat" >
+        select *
+        from seat
+        where room_id = #{room_id}
+    </select>
+    <select id="roomSeatUsed" resultType="com.library.bean.Seat" >
+        SELECT seat.seat_id,room_id
+        FROM seat,record
+        WHERE room_id=#{room_id}  and record.seat_id=seat.seat_id
+          AND NOW()>start_time and NOW()&lt;end_time
+    </select>
 </mapper>

@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>阅览室ID</title>
+    <title>记录</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/my.css">
     <script src="js/jquery-3.2.1.js"></script>
@@ -71,39 +71,46 @@
 <div class="panel panel-default" style="position:relative;top: 80px;width: 90%;margin-left: 5%">
     <div class="panel-heading">
         <h3 class="panel-title">
-            全部座位
+            记录 ${detail.record_id}
         </h3>
     </div>
     <div class="panel-body">
         <table class="table table-hover" >
             <thead>
             <tr>
-                <th>座位ID</th>
-                <th>当前是否可用</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
             </tr>
             </thead>
             <tbody>
-                        <c:forEach items="${seats}" var="seat">
-                            <tr>
-                                <td><c:out value="${seat.seat_id}"></c:out></td>
-                                <c:set var="flag" value="false"/>
-                                <c:forEach var="used" items="${usedSeats}">
-                                    <c:if test="${used.seat_id eq seat.seat_id}">
+             <c:set var="flag" value="false"/>
+                                <c:forEach var="record" items="${myRecordList}">
+                                    <c:if test="${record eq record.record_id}">
                                         <c:set var="flag" value="true"/>
                                     </c:if>
                                 </c:forEach>
                                 <c:if test="${flag}">
-                                      <td>不可用<td>
+                                    <td><a href="return.html?record_id=<c:out value="${record.record_id}"></c:out>">
+                                        <button type="button" class="btn btn-danger btn-xs">取消</button>
+                                    </a></td>
                                 </c:if>
                                 <c:if test="${not flag}">
-                                    <td>可用<td>
+                                    <c:if test="${record.flag>0}">
+                                        <td><a href="record.html?bookId=<c:out value="${record.record_id}"></c:out>">
+                                            <button type="button" class="btn btn-primary btn-xs">预定</button>
+                                        </a></td>
+                                    </c:if>
+                                    <c:if test="${book.number==0}">
+                                        <td>
+                                            <button type="button" class="btn btn-defalut btn-xs" disabled="disabled">无法预定</button>
+                                        </td>
+                                    </c:if>
                                 </c:if>
-                                <td><a href="admin_record_list.html?seat_id=<c:out value="${seat.seat_id}"></c:out>">
+                                <td><a href="reader_book_detail.html?bookId=<c:out value="${book.bookId}"></c:out>">
                                     <button type="button" class="btn btn-success btn-xs">详情</button>
                                 </a></td>
                             </tr>
                         </c:forEach>
-                        </tbody>
         </table>
     </div>
 </div>

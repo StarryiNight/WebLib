@@ -1,0 +1,19 @@
+
+`
+java:S1192&"JDefine a constant instead of duplicating this literal "record_id" 3 times.(£öïø
+b
+java:S1192)"GDefine a constant instead of duplicating this literal "detail" 3 times.(ÔŞŸ—üÿÿÿÿ
+f	java:S117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£öïø
+f	java:S1179"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£öïø
+f	java:S117B"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£öïø
+P
+java:S6213":Rename this variable to not match a restricted identifier.(ïæ¯å
+U
+java:S6213'":Rename this variable to not match a restricted identifier.(Æ½×”úÿÿÿÿ
+P
+java:S6213.":Rename this variable to not match a restricted identifier.(èüë¬
+U
+java:S6213:":Rename this variable to not match a restricted identifier.(Æ½×”úÿÿÿÿ
+U
+java:S6213C":Rename this variable to not match a restricted identifier.(Æ½×”úÿÿÿÿ
+X	java:S125U"<This block of commented-out lines of code should be removed.(õÂËÛ8„ÿåœŸ/

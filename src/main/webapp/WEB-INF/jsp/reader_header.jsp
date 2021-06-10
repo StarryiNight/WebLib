@@ -22,7 +22,7 @@
                     </a>
                 </li>
                  <li >
-                    <a href="reader_rooms.html" >
+                    <a href="reader_room_list.html" >
                          座位预定
                     </a>
                  </li>
