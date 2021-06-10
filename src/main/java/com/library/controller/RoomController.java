@@ -41,7 +41,7 @@ public class RoomController {
         return "redirect:/admin_room_list.html";
     }
 
-    @RequestMapping("/reader_roomlist.html")
+    @RequestMapping("/reader_room_list.html")
     private ModelAndView ReaderRoomList() {
         ModelAndView modelAndView = new ModelAndView("reader_room_list");
         modelAndView.addObject("rooms", roomService.roomList());

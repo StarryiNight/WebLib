@@ -38,7 +38,7 @@ public class SeatDao {
         return (ArrayList<Seat>) result;
     }
 
-    public int eidtSeat(final Seat seat) {
+    public int editSeat(final Seat seat) {
         return sqlSessionTemplate.update(NAMESPACE + "editSeat", seat);
     }
 

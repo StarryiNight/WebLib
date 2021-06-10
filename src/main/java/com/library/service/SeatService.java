@@ -29,6 +29,6 @@ public class SeatService {
     }
 
     public boolean editSeat(Seat seat) {
-        return seatDao.eidtSeat(seat) > 0;
+        return seatDao.editSeat(seat) > 0;
     }
 }

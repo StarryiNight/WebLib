@@ -1,7 +1,5 @@
 package com.library.dao;
 
-
-import com.library.bean.Book;
 import com.library.bean.Record;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
@@ -36,5 +34,10 @@ public class RecordDao {
 
     public int deleteRecord(final long record_id) {
         return sqlSessionTemplate.delete(NAMESPACE + "deleteRecord", record_id);
+    }
+
+    public ArrayList<Record> myRecordList(final long reader_id) {
+        List<Record> result = sqlSessionTemplate.selectList(NAMESPACE + "myRecordList", reader_id);
+        return (ArrayList < Record >) result;
     }
 }

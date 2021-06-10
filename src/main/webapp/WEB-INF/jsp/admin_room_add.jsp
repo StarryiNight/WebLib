@@ -86,25 +86,25 @@
             <h3 class="panel-title">添加阅览室</h3>
         </div>
         <div class="panel-body">
-            <form action="room_add_do.html" method="post" id="readeredit" >
+            <form action="room_add_do.html" method="post" id="roomedit" >
                 <div class="input-group" style="padding-top: 20px;">
                    <span  class="input-group-addon">阅览室ID</span>
-                           <input  type="text" class="form-control" name="name" id="name" >
+                           <input  type="text" class="form-control" name="room_id" id="room_id" >
                 </div>
                 <div class="input-group" style="padding-top: 20px;">
                     <span  class="input-group-addon">位置</span>
-                            <input  type="text" class="form-control" name="author" id="author" >
+                            <input  type="text" class="form-control" name="location" id="location" >
                 </div>
                 <div class="input-group" style="padding-top: 20px;">
                     <span  class="input-group-addon">座位数量</span>
-                           <input  type="text" class="form-control" name="publish" id="publish" >
+                           <input  type="text" class="form-control" name="seat_sum" id="seat_sum" >
                 </div>
                  <center>
                 <input style="align-items: center" type="submit" value="添加" class="btn btn-success btn-sm"
                        class="text-left">
                  </center>
                <script>
-                       $("#addbook").submit(function () {
+                       $("#roomedit").submit(function () {
                        if ($("#room_id").val() == '' || $("#location").val() == '' || $("#seat_sum").val() == '' ) {
                        alert("请填入完整阅览室信息！");
                        return false;

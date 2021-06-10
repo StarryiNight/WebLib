@@ -1,6 +1,6 @@
 package com.library.service;
 
-import com.library.bean.Book;
+import com.library.bean.Lend;
 import com.library.bean.Record;
 import com.library.dao.RecordDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +29,12 @@ public class RecordService {
         return recordDao.editRecord(record) > 0;
     }
 
-    public boolean deleteRecord(Long bookId) {
-        return recordDao.deleteRecord(bookId) > 0;
+    public boolean deleteRecord(Long record) {
+        return recordDao.deleteRecord(record) > 0;
+    }
+
+    public ArrayList<Record> myRecordList(Long readerId){
+        return recordDao.myRecordList(readerId);
     }
 
 }

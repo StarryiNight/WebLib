@@ -86,7 +86,7 @@
             <h3 class="panel-title">添加图书</h3>
         </div>
         <div class="panel-body">
-            <form action="reader_add_do.html" method="post" id="readeredit" >
+            <form action="book_add_do.html" method="post" id="addbook" >
                 <div class="input-group" style="padding-top: 20px;">
                    <span  class="input-group-addon">图书名</span>
                            <input  type="text" class="form-control" name="name" id="name" >
