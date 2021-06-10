@@ -5,7 +5,7 @@ import java.util.Date;
 public class Record {
     long record_id;
     long seat_id;
-    long recorder_id;
+    long reader_id;
     Date start_time;
     Date end_time;
     Date sign_time;
@@ -26,12 +26,12 @@ public class Record {
         this.seat_id = seat_id;
     }
 
-    public long getRecorder_id() {
-        return recorder_id;
+    public long getReader_id() {
+        return reader_id;
     }
 
-    public void setRecorder_id(long recorder_id) {
-        this.recorder_id = recorder_id;
+    public void setReader_id(long reader_id) {
+        this.reader_id = reader_id;
     }
 
     public Date getStart_time() {

@@ -1,7 +1,9 @@
 package com.library.controller;
 
 import com.library.bean.ReaderCard;
+import com.library.bean.Room;
 import com.library.bean.Seat;
+import com.library.service.RoomService;
 import com.library.service.SeatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,8 @@ import java.util.ArrayList;
 public class SeatController {
     @Autowired
     private SeatService seatService;
+    @Autowired
+    private RoomService roomService;
 
     @RequestMapping("/deleteseat.html")
     public String deleteBook(HttpServletRequest request, RedirectAttributes redirectAttributes) {
@@ -26,7 +30,7 @@ public class SeatController {
         } else {
             redirectAttributes.addFlashAttribute("error", "座位删除失败");
         }
-        return "redirect:/admin_seats.html";
+        return "redirect:/admin_room_seats.html";
     }
 
     @RequestMapping("/seat_add.html")
@@ -41,16 +45,16 @@ public class SeatController {
         } else {
             redirectAttributes.addFlashAttribute("error", "增加座位失败");
         }
-        return "redirect:/admin_seats.html";
+        return "redirect:/admin_room_seats.html";
     }
 
 
-        @RequestMapping("/admin_seats.html")
-    public ModelAndView seatList() {
-        ArrayList<Seat> seats = seatService.seatList();
-        ModelAndView modelAndView = new ModelAndView("admin_seats");
-        modelAndView.addObject("seat", seats);
-        //modelAndView.addObject("usedSeat", seats);
+    @RequestMapping("/admin_room_seats.html")
+    public ModelAndView adminRoomDetail(HttpServletRequest request) {
+        long roomId = Long.parseLong(request.getParameter("room_id"));
+        Room room = roomService.getRoom(roomId);
+        ModelAndView modelAndView = new ModelAndView("admin_room_seats");
+        modelAndView.addObject("detail", room);
         return modelAndView;
     }
 
@@ -70,7 +74,7 @@ public class SeatController {
         } else {
             redirectAttributes.addFlashAttribute("error", "座位修改失败！");
         }
-        return "redirect:/admin_seats.html";
+        return "redirect:/admin_room_seats.html";
     }
 
 

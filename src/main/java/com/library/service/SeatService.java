@@ -24,11 +24,19 @@ public class SeatService {
         return seatDao.seatList();
     }
 
-    public Seat getSeat(long seat_id) {
+    public Seat getSeat(final long seat_id) {
         return seatDao.getSeat(seat_id);
     }
 
     public boolean editSeat(Seat seat) {
         return seatDao.editSeat(seat) > 0;
+    }
+
+    public ArrayList<Seat> roomSeatAvailable(final long room_id) {
+        return seatDao.roomSeatAvailable(room_id);
+    }
+
+    public ArrayList<Seat> roomSeatList(final long room_id) {
+        return seatDao.roomSeatList(room_id);
     }
 }

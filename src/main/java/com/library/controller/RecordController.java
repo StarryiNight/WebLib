@@ -1,8 +1,6 @@
 package com.library.controller;
 
-import com.library.bean.Book;
-import com.library.bean.Lend;
-import com.library.bean.ReaderCard;
+
 import com.library.bean.Record;
 import com.library.service.RecordService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,6 +80,7 @@ public class RecordController {
         return modelAndView;
     }
 
+/*
     @RequestMapping("/reader_record_list.html")
     public ModelAndView readerRecordList(HttpServletRequest request) {
         ArrayList<Record> records = recordService.getAllRecords();
@@ -99,5 +98,6 @@ public class RecordController {
         modelAndView.addObject("myLendList", myLendList);
         return modelAndView;
     }
+*/
 
 }

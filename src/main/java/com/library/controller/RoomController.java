@@ -63,14 +63,7 @@ public class RoomController {
         return "redirect:/admin_room_list.html";
     }
 
-    @RequestMapping("/admin_room_seats.html")
-    public ModelAndView adminRoomDetail(HttpServletRequest request) {
-        long roomId = Long.parseLong(request.getParameter("room_id"));
-        Room room = roomService.getRoom(roomId);
-        ModelAndView modelAndView = new ModelAndView("admin_room_seats");
-        modelAndView.addObject("detail", room);
-        return modelAndView;
-    }
+
 
     @RequestMapping("/reader_room_seats.html")
     public ModelAndView RoomDetail(HttpServletRequest request) {

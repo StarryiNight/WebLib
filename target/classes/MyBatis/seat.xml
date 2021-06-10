@@ -4,9 +4,19 @@
     <select id="seatList" resultType="com.library.bean.Seat" >
         select * from seat
     </select>
-    <select id="mySeatList" resultType="com.library.bean.Seat" parameterType="long">
-        select * from record
-        where reader_id=#{reader_id}
+    <select id="getSeat" resultType="com.library.bean.Seat" parameterType="long">
+        select * from seat
+        where seat_id=#{seat_id}
     </select>
-
+    <delete id="deleteSeat" parameterType="long">
+        delete from seat
+        where seat_id=#{seat_id}
+    </delete>
+    <update id="editSeat" parameterType="com.library.bean.Seat">
+        update seat set seat_id=#{seat_id},room_id=#{room_id}
+    </update>
+    <insert id="addSeat" >
+        insert into seat values
+        (#{seat_id},#{room_id})
+    </insert>
 </mapper>
