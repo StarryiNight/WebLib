@@ -1,14 +1,11 @@
 package com.library.controller;
 
-import com.library.bean.ReaderCard;
-import com.library.bean.Room;
 import com.library.bean.Seat;
 import com.library.service.RoomService;
 import com.library.service.SeatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -51,10 +48,12 @@ public class SeatController {
 
     @RequestMapping("/admin_room_seats.html")
     public ModelAndView adminRoomDetail(HttpServletRequest request) {
-        long roomId = Long.parseLong(request.getParameter("room_id"));
-        Room room = roomService.getRoom(roomId);
+        long room_id = Long.parseLong(request.getParameter("room_id"));
+        ArrayList<Seat> seats = seatService.roomSeatList(room_id);
+        ArrayList<Seat> availableSeats = seatService.roomSeatAvailable(room_id);
         ModelAndView modelAndView = new ModelAndView("admin_room_seats");
-        modelAndView.addObject("detail", room);
+        modelAndView.addObject("seats", seats);
+        modelAndView.addObject("availableSeats", availableSeats);
         return modelAndView;
     }
 
