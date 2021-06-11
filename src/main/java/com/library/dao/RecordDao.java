@@ -10,13 +10,13 @@ import java.util.List;
 
 @Repository
 public class RecordDao {
-    private final static String NAMESPACE = "com.library.dao.RecoderDao";
+    private final static String NAMESPACE = "com.library.dao.RecordDao.";
 
     @Resource
     private SqlSessionTemplate sqlSessionTemplate;
 
     public ArrayList<Record> getAllRecords() {
-        List<Record> result = sqlSessionTemplate.selectList(NAMESPACE + "getAllRrcord");
+        List<Record> result = sqlSessionTemplate.selectList(NAMESPACE + "getAllRecord");
         return (ArrayList<Record>) result;
     }
 

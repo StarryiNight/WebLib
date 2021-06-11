@@ -1,14 +1,0 @@
-
-†
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(†¼Å 
-†
-java:S1319$"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(…¥õÃ
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âÃçÂşÿÿÿÿ
-M
-java:S1128"2Remove this unused import 'com.library.bean.Lend'.(á¸ç£ıÿÿÿÿ
-U
-java:S6213":Rename this variable to not match a restricted identifier.(›§ªşÿÿÿÿ
-O
-java:S6213":Rename this variable to not match a restricted identifier.(Öğşn
-P
-java:S6213 ":Rename this variable to not match a restricted identifier.(×Ï¸ö

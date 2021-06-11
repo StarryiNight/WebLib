@@ -71,7 +71,7 @@
 <div class="panel panel-default" style="position:relative;top: 80px;width: 90%;margin-left: 5%">
     <div class="panel-heading">
         <h3 class="panel-title">
-            记录 ${detail.record_id}
+            座位 ${detail.seat_id}
         </h3>
     </div>
     <div class="panel-body">
@@ -82,15 +82,25 @@
                 <th>结束时间</th>
             </tr>
             </thead>
-            <tbody>
-            <c:forEach items="${records}" var="record">
-                <tr>
-                    <td><c:out value="${record.start_time}"></c:out></td>
-                    <td><c:out value="${record.end_time}"></c:out></td>
-                    <td><a href="updaterecord.html?record_id=<c:out value="${record.record_id}"></c:out>"><button type="button" class="btn btn-info btn-xs">编辑</button></a></td>
-                    <td><a href="deleterecord.html?record_id=<c:out value="${record.record_id}"></c:out>"><button type="button" class="btn btn-danger btn-xs">删除</button></a></td>
-                    </tr>
-                    </c:forEach>
+            <tr>
+
+            <c:forEach var="x" begin="7" end="21" step="1" varStatus="status">
+            <c:if test="${status.count eq 1 || (status.count-1) % 2 eq 0}">
+            <tr>
+            </c:if>
+                   <td>
+                    ${x}:00
+                   </td>
+                   <td>
+                    ${x+1}:00
+                   </td>
+                <td><button type="button" class="btn btn-info btn-xs">编辑</button></td>
+                <td><button type="button" class="btn btn-danger btn-xs">删除</button></td>
+            <c:if test="${status.count % 1 eq 0 || status.count eq 1}">
+                  </tr>
+                  </c:if>
+            </c:forEach>
+            </tr>
             </tbody>
         </table>
     </div>

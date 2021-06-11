@@ -38,7 +38,7 @@ public class RecordController {
         long record_id = Long.parseLong(request.getParameter("record_id"));
         Record record= recordService.getRecord(record_id);
         ModelAndView modelAndView = new ModelAndView("admin_record_edit");
-        modelAndView.addObject("detail", record);
+       modelAndView.addObject("detail", record);
         return modelAndView;
     }
 
@@ -73,10 +73,11 @@ public class RecordController {
 
 
     @RequestMapping("/admin_record_list.html")
-    public ModelAndView adminRecordList() {
-        ArrayList<Record> records = recordService.getAllRecords();
-        ModelAndView modelAndView = new ModelAndView("admin_room_list");
-        modelAndView.addObject("records", records);
+    public ModelAndView adminRecordList(HttpServletRequest request) {
+        long seat_id = Long.parseLong(request.getParameter("seat_id"));
+     //   ArrayList<Record> records = recordService.getAllRecords();
+        ModelAndView modelAndView = new ModelAndView("admin_record_list");
+     // modelAndView.addObject("records", records);
         return modelAndView;
     }
 
