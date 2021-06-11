@@ -95,22 +95,21 @@
                                     </a></td>
                                 </c:if>
                                 <c:if test="${not flag}">
-                                    <c:if test="${record.flag>0}">
-                                        <td><a href="record.html?bookId=<c:out value="${record.record_id}"></c:out>">
+                                    <c:if test="${record.flag==1}">
+                                        <td><a href="record.html?record_id=<c:out value="${record.record_id}"></c:out>">
                                             <button type="button" class="btn btn-primary btn-xs">预定</button>
                                         </a></td>
                                     </c:if>
-                                    <c:if test="${book.number==0}">
+                                    <c:if test="${record.flag==0}">
                                         <td>
                                             <button type="button" class="btn btn-defalut btn-xs" disabled="disabled">无法预定</button>
                                         </td>
                                     </c:if>
                                 </c:if>
-                                <td><a href="reader_book_detail.html?bookId=<c:out value="${book.bookId}"></c:out>">
-                                    <button type="button" class="btn btn-success btn-xs">详情</button>
-                                </a></td>
+
                             </tr>
-                        </c:forEach>
+
+                        </tbody>
         </table>
     </div>
 </div>

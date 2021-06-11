@@ -10,6 +10,14 @@ public class Record {
     Date end_time;
     Date sign_time;
 
+    public Date getSign_time() {
+        return sign_time;
+    }
+
+    public void setSign_time(Date sign_time) {
+        this.sign_time = sign_time;
+    }
+
     public long getRecord_id() {
         return record_id;
     }

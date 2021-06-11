@@ -21,6 +21,29 @@
         delete from record where record_id=#{record_id}
     </delete>
     <select id="myRecordList" resultType="com.library.bean.Record" parameterType="long">
-        select * from record where record_id=#{record_id}
+        select * from record where reader_id=#{reader_id}
+    </select>
+    <select id="usedSeatRecordId" parameterType="long" resultType="long">
+        SELECT  record_id
+        FROM record
+        WHERE seat_id=#{seat_id} and DATE_FORMAT(start_time,'%Y-%m-%d')=CURDATE()
+    </select>
+    <update id="recordSign" parameterType="com.library.dao.RecordDao">
+        update record set sign_time=now()
+                        where record_id=#{record_id}
+    </update>
+    <select id="exceedRecord" resultType="com.library.bean.Record" parameterType="long">
+        select * from record where reader_id=#{reader_id} and now()>end_time and sign_time is  null
+    </select>
+    <select id="unSignedRecord" resultType="com.library.bean.Record" parameterType="long">
+        select * from record where reader_id=#{reader_id} and now()&lt;=end_time and NOW()>=start_time
+        and sign_time is  null
+    </select>
+    <select id="allExceedRecord" resultType="com.library.bean.Record" parameterType="long">
+        select * from record where  now()>end_time and sign_time is  null
+    </select>
+    <select id="allUnSignedRecord" resultType="com.library.bean.Record" parameterType="long">
+        select * from record where now()&lt;=end_time and NOW()>=start_time
+                               and sign_time is  null
     </select>
 </mapper>

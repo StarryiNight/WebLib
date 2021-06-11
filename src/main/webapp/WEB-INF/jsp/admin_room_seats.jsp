@@ -98,9 +98,11 @@
                                 <c:if test="${not flag}">
                                     <td>可用<td>
                                 </c:if>
-                                <td><a href="admin_record_list.html?seat_id=<c:out value="${seat.seat_id}"></c:out>">
+                                <td><a href="admin_moment_list.html?seat_id=<c:out value="${seat.seat_id}"></c:out>">
                                     <button type="button" class="btn btn-success btn-xs">详情</button>
                                 </a></td>
+                                <td><a href="updateseat.html?seat_id=<c:out value="${seat.seat_id}"></c:out>"><button type="button" class="btn btn-info btn-xs">编辑</button></a></td>
+                                <td><a href="deleteseat.html?seat_id=<c:out value="${seat.seat_id}"></c:out>"><button type="button" class="btn btn-danger btn-xs">删除</button></a></td>
                             </tr>
                         </c:forEach>
                         </tbody>

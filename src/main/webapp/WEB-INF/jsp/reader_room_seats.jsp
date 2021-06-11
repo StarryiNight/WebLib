@@ -84,14 +84,26 @@
             </thead>
             <tbody>
             <c:forEach items="${seats}" var="seat">
-                <tr>
-                    <td><c:out value="${seat.seat_id}"></c:out></td>
-                    <td><c:out value="${seat.没有}"></c:out></td>
-                    <td><a href="reader_record.html?seat_id=<c:out value="${seat.seat_id}"></c:out>">
-                    <button type="button" class="btn btn-success btn-xs">详情</button>
-                    </a></td>
-                    </tr>
-                    </c:forEach>
+                                       <tr>
+                                           <td><c:out value="${seat.seat_id}"></c:out></td>
+                                           <c:set var="flag" value="false"/>
+                                           <c:forEach var="used" items="${usedSeats}">
+                                               <c:if test="${used.seat_id eq seat.seat_id}">
+                                                   <c:set var="flag" value="true"/>
+                                               </c:if>
+                                           </c:forEach>
+                                           <c:if test="${flag}">
+                                                 <td>不可用<td>
+                                           </c:if>
+                                           <c:if test="${not flag}">
+                                               <td>可用<td>
+                                           </c:if>
+                                           <td><a href="reader_record_list.html?seat_id=<c:out value="${seat.seat_id}"></c:out>">
+                                               <button type="button" class="btn btn-success btn-xs">详情</button>
+                                           </a></td>
+
+                                       </tr>
+                                   </c:forEach>
             </tbody>
         </table>
     </div>

@@ -35,4 +35,8 @@ public class ReaderInfoService {
     public long addReaderInfo(ReaderInfo readerInfo) {
         return readerInfoDao.addReaderInfo(readerInfo);
     }
+
+    public ArrayList<ReaderInfo> orderReader() {
+        return readerInfoDao.orderReader();
+    }
 }

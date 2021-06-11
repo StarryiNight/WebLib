@@ -1,7 +1,10 @@
 package com.library.controller;
 
 
+import com.library.bean.Moment;
+import com.library.bean.ReaderCard;
 import com.library.bean.Record;
+import com.library.service.MomentService;
 import com.library.service.RecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +20,8 @@ public class RecordController {
     @Autowired
     private RecordService recordService;
 
-    @RequestMapping("/record_add.html")
+
+/*    @RequestMapping("/record_add.html")
     public ModelAndView addRecord() {
         return new ModelAndView("admin_record_add");
     }
@@ -31,19 +35,19 @@ public class RecordController {
             redirectAttributes.addFlashAttribute("error", "记录添加失败！");
         }
         return "redirect:/admin_record_list.html";
-    }
+    }*/
 
     @RequestMapping("/updaterecord.html")
     public ModelAndView recordEdit(HttpServletRequest request) {
         long record_id = Long.parseLong(request.getParameter("record_id"));
-        Record record= recordService.getRecord(record_id);
+        Record record = recordService.getRecord(record_id);
         ModelAndView modelAndView = new ModelAndView("admin_record_edit");
         modelAndView.addObject("detail", record);
         return modelAndView;
     }
 
     @RequestMapping("/record_edit_do.html")
-    public String recordEditDo( Record record, RedirectAttributes redirectAttributes) {
+    public String recordEditDo(Record record, RedirectAttributes redirectAttributes) {
         if (recordService.editRecord(record)) {
             redirectAttributes.addFlashAttribute("succ", "记录修改成功！");
         } else {
@@ -52,10 +56,21 @@ public class RecordController {
         return "redirect:/admin_record_list.html";
     }
 
+    @RequestMapping("/deleterecord.html")
+    public String deleteRecord(HttpServletRequest request, RedirectAttributes redirectAttributes) {
+        long record_id = Long.parseLong(request.getParameter("record_id"));
+        if (recordService.deleteRecord(record_id)) {
+            redirectAttributes.addFlashAttribute("succ", "记录删除成功！");
+        } else {
+            redirectAttributes.addFlashAttribute("error", "记录删除失败！");
+        }
+        return "redirect:/admin_record_list.html";
+    }
+
     @RequestMapping("/admin_record_detail.html")
     public ModelAndView adminRecordDetail(HttpServletRequest request) {
         long record_id = Long.parseLong(request.getParameter("record_id"));
-        Record record= recordService.getRecord(record_id);
+        Record record = recordService.getRecord(record_id);
         ModelAndView modelAndView = new ModelAndView("admin_record_detail");
         modelAndView.addObject("detail", record);
         return modelAndView;
@@ -64,40 +79,47 @@ public class RecordController {
     @RequestMapping("/reader_record_detail.html")
     public ModelAndView readerRecordDetail(HttpServletRequest request) {
         long record_id = Long.parseLong(request.getParameter("record_id"));
-        Record record= recordService.getRecord(record_id);
+        Record record = recordService.getRecord(record_id);
         ModelAndView modelAndView = new ModelAndView("reader_record_detail");
         modelAndView.addObject("detail", record);
         return modelAndView;
     }
 
 
-
     @RequestMapping("/admin_record_list.html")
-    public ModelAndView adminRecordList() {
-        ArrayList<Record> records = recordService.getAllRecords();
-        ModelAndView modelAndView = new ModelAndView("admin_room_list");
-        modelAndView.addObject("records", records);
+    public ModelAndView adminRecordList(HttpServletRequest request) {
+        ModelAndView modelAndView = new ModelAndView("admin_record_list");
+        ArrayList<Record> allRecord = recordService.getAllRecords();
+        ArrayList<Record> exceedRecord = recordService.allExceedRecord();
+        ArrayList<Record> unSignedRecord =recordService.allUnSignedRecord();
+        modelAndView.addObject("allRecord", allRecord);
+        modelAndView.addObject("exceedRecord", exceedRecord);
+        modelAndView.addObject("unSignedRecord", unSignedRecord);
         return modelAndView;
     }
 
-/*
-    @RequestMapping("/reader_record_list.html")
-    public ModelAndView readerRecordList(HttpServletRequest request) {
-        ArrayList<Record> records = recordService.getAllRecords();
+    @RequestMapping("/myrecord.html")
+    public ModelAndView myRecord(HttpServletRequest request) {
         ReaderCard readerCard = (ReaderCard) request.getSession().getAttribute("readercard");
-        ArrayList<Record> myAllRecordList = recordService.myRecordList(readerCard.getReaderId());
-        ArrayList<Record> myLendList = new ArrayList<>();
-        for (Lend lend : myAllLendList) {
-            // 是否已归还
-            if (lend.getBackDate() == null) {
-                myLendList.add(lend.getBookId());
-            }
-        }
-        ModelAndView modelAndView = new ModelAndView("reader_books");
-        modelAndView.addObject("books", books);
-        modelAndView.addObject("myLendList", myLendList);
+        ModelAndView modelAndView = new ModelAndView("reader_record_list");
+        ArrayList<Record> myAllRecord = recordService.myRecordList(readerCard.getReaderId());
+        ArrayList<Record> exceedRecord = recordService.exceedRecord(readerCard.getReaderId());
+        ArrayList<Record> unSignedRecord =recordService.unSignedRecord(readerCard.getReaderId());
+        modelAndView.addObject("allRecord", myAllRecord);
+        modelAndView.addObject("exceedRecord", exceedRecord);
+        modelAndView.addObject("unSignedRecord", unSignedRecord);
         return modelAndView;
     }
-*/
+
+    @RequestMapping("/record_sign_do.html")
+    public String recordSignDo(Record record, RedirectAttributes redirectAttributes) {
+        if (recordService.signRecord(record)) {
+            redirectAttributes.addFlashAttribute("succ", "签到成功！");
+        } else {
+            redirectAttributes.addFlashAttribute("error", "签到失败！");
+        }
+        return "redirect:/admin_record_list.html";
+    }
+
 
 }

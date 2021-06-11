@@ -2,6 +2,8 @@ E:\javaProject\webLibrary\src\main\java\com\library\dao\SeatDao.java
 E:\javaProject\webLibrary\src\main\java\com\library\bean\Lend.java
 E:\javaProject\webLibrary\src\main\java\com\library\bean\Book.java
 E:\javaProject\webLibrary\src\main\java\com\library\bean\ReaderCard.java
+E:\javaProject\webLibrary\src\main\java\com\library\bean\Moment.java
+E:\javaProject\webLibrary\src\main\java\com\library\controller\MomentController.java
 E:\javaProject\webLibrary\src\main\java\com\library\dao\AdminDao.java
 E:\javaProject\webLibrary\src\main\java\com\library\service\RoomService.java
 E:\javaProject\webLibrary\src\main\java\com\library\controller\LendController.java
@@ -17,12 +19,14 @@ E:\javaProject\webLibrary\src\main\java\com\library\dao\RecordDao.java
 E:\javaProject\webLibrary\src\main\java\com\library\service\ReaderCardService.java
 E:\javaProject\webLibrary\src\main\java\com\library\dao\BookDao.java
 E:\javaProject\webLibrary\src\main\java\com\library\bean\Room.java
+E:\javaProject\webLibrary\src\main\java\com\library\dao\MomentDao.java
 E:\javaProject\webLibrary\src\main\java\com\library\service\SeatService.java
 E:\javaProject\webLibrary\src\main\java\com\library\bean\Admin.java
 E:\javaProject\webLibrary\src\main\java\com\library\bean\ReaderInfo.java
 E:\javaProject\webLibrary\src\main\java\com\library\bean\Record.java
 E:\javaProject\webLibrary\src\main\java\com\library\controller\LoginController.java
 E:\javaProject\webLibrary\src\main\java\com\library\dao\RoomDao.java
+E:\javaProject\webLibrary\src\main\java\com\library\service\MomentService.java
 E:\javaProject\webLibrary\src\main\java\com\library\service\LoginService.java
 E:\javaProject\webLibrary\src\main\java\com\library\dao\LendDao.java
 E:\javaProject\webLibrary\src\main\java\com\library\controller\WebConfig.java

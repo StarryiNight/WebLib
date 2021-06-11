@@ -87,7 +87,7 @@
             <h3 class="panel-title">添加记录</h3>
         </div>
         <div class="panel-body">
-            <form action="record_add_do.html" method="post" id="recordedit" >
+            <form action="record_add_do.html" method="post" id="recordadd" >
                 <div class="input-group" style="padding-top: 20px;">
                     <span  class="input-group-addon">开始时间</span>
                     <input  type="password" class="form-control" name="start_time" id="start_time" >
@@ -104,9 +104,9 @@
                     function mySubmit(flag){
                         return flag;
                     }
-                    $("#recordedit").submit(function () {
+                    $("#recordadd").submit(function () {
                         if($("#start_time").val()==''||$("#end_time").val()==''){
-                            alert("请填入完整读者信息！");
+                            alert("请填入完整时间信息！");
                             return mySubmit(false);
                         }
                     })

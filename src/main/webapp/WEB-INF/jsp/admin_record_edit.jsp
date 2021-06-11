@@ -49,21 +49,21 @@
             <h3 class="panel-title">编辑记录</h3>
         </div>
         <div class="panel-body">
-            <form action="record_edit_do.html?seat_id=${detail.seat_id}" method="post" id="recordedit" >
+            <form action="record_edit_do.html?record_id=${detail.record_id}" method="post" id="recordedit" >
 
                 <div class="input-group">
-                    <span  class="input-group-addon">时间段</span>
-                    <input type="text" class="form-control" name="rec_id" id="room_id" value="${detail.record_id}">
+                    <span  class="input-group-addon">开始时间</span>
+                    <input type="text" class="form-control" name="start_time" id="start_time" value="${detail.record_id}">
                 </div>
                  <div class="input-group">
-                    <span  class="input-group-addon">是否可用</span>
-                    <input type="text" class="form-control" name="room_id" id="room_id" value="${detail.room_id}">
+                    <span  class="input-group-addon">结束时间</span>
+                    <input type="text" class="form-control" name="end_time" id="end_time" value="${detail.record_id}">
                  </div>
                 <input type="submit" value="确定" class="btn btn-success btn-sm" class="text-left">
                 <script>
                     $("#seatedit").submit(function () {
-                        if($("#room_id").val()==''||$("#location").val()==''||$("#seat_sum").val()==''){
-                            alert("请填入完整图书信息！");
+                        if($("#start_time").val()==''||$("#end_time").val()==''){
+                            alert("请填入完整时间信息！");
                             return false;
                         }
                     })

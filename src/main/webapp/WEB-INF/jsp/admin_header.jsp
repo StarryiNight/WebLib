@@ -37,17 +37,30 @@
                     </a>
                          <ul class="dropdown-menu">
                           <li><a href="admin_room_list.html">阅览室</a></li>
-                          <li class="divider"></li>
+                          <li class="dropdown">
                           <li><a href="room_add.html">增加阅览室</a></li>
+                          </li>
+                          <li class="divider"></li>
+                          <li><a href="admin_seat_list.html">座位</a></li>
+                          <li class="dropdown">
+                          <li><a href="seat_add.html">增加座位</a></li>
+                          </li>
+                          <li class="divider"></li>
+                          <li><a href="admin_moment_list.html">时刻表</a></li>
+                          <li class="dropdown">
+                          <li><a href="admin_record_add.html">增加时刻</a></li>
+                           </li>
                           </ul>
                  </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">
-                        借还管理
+                        日志管理
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="lendlist.html">借还日志</a></li>
+                        <li class="divider"></li>
+                        <li><a href="admin_record_list.html">预定日志</a></li>
                     </ul>
                 </li>
                 <li >

@@ -43,4 +43,9 @@ public class ReaderInfoDao {
             return -1;
         }
     }
+
+    public ArrayList<ReaderInfo> orderReader() {
+        List<ReaderInfo> result = sqlSessionTemplate.selectList(NAMESPACE + "orderReader");
+        return (ArrayList<ReaderInfo>) result;
+    }
 }

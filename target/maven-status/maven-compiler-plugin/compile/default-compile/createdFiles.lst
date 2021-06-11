@@ -1,6 +1,7 @@
 com\library\controller\ReaderController.class
 com\library\bean\Admin.class
 com\library\controller\WebConfig.class
+com\library\bean\Moment.class
 com\library\dao\BookDao.class
 com\library\bean\ReaderInfo.class
 com\library\bean\Seat.class
@@ -9,8 +10,10 @@ com\library\service\RecordService.class
 com\library\service\BookService.class
 com\library\dao\ReaderCardDao.class
 com\library\dao\RoomDao.class
+com\library\controller\MomentController.class
 com\library\controller\BookController.class
 com\library\dao\AdminDao.class
+com\library\dao\MomentDao.class
 com\library\service\LoginService.class
 com\library\service\RoomService.class
 com\library\controller\RecordController.class
@@ -30,3 +33,4 @@ com\library\bean\Room.class
 com\library\dao\ReaderInfoDao.class
 com\library\service\SeatService.class
 com\library\bean\Record.class
+com\library\service\MomentService.class
