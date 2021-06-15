@@ -49,9 +49,7 @@
       text-align: center;
 
     }
-    .Mywidth{
-        width:40px !important;
-    }
+
     h1{
       margin: 20px;
 
@@ -65,11 +63,8 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
       opacity: 0.9;
     }
-    p {
-        margin: -60px 40px 10px;
-    }
 
-    .zz{
+    input{
       border: none;
       width: 80%;
       font-size: 22px;
@@ -124,15 +119,15 @@
 <div  id="login">
 
     <h1 class="tt">图 书 馆</h1>
-        <input class="zz" type="text"  id="id" placeholder="用户名">
-        <input class="zz" type="password"  id="passwd" placeholder="密码">
+        <input type="text"  id="id" placeholder="用户名">
+        <input type="password"  id="passwd" placeholder="密码">
         <div class="checkbox text-left">
             <label>
-                <input class="Mywidth" type="checkbox" id="remember">记住密码
+                <input type="checkbox" id="remember">记住密码
             </label>
         </div>
         <p style="text-align: right;color: red;position: absolute" id="info"></p>
-        <input class="zz" type="submit" id="loginButton" class="btn tt" value="登 录" >
+        <input type="submit" id="loginButton" class="btn tt" value="登 录" >
 </div>
     <script>
         $("#id").keyup(

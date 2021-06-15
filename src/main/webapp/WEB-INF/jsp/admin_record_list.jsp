@@ -96,7 +96,7 @@
                                    <c:set var="flag" value="true"/>
                              </c:if>
                          </c:forEach>
-                         <c:forEach var="unSign" items="${unSignRecord}">
+                         <c:forEach var="unSign" items="${unSignedRecord}">
                              <c:if test="${unSign.record_id eq alog.record_id}">
                                  <c:set var="flag2" value="true"/>
                               </c:if>
@@ -115,8 +115,9 @@
                                   </c:if>
                              </c:if>
                     <td>
+                    <td><a href="updaterecord.html?record_id=<c:out value="${alog.record_id}"></c:out>"><button type="button" class="btn btn-info btn-xs">编辑</button></a></td>
                         <a href="deleterecord.html?record_id=<c:out value='${alog.record_id}'></c:out>">
-                            <c:if test="${!empty alog.sign_time}">
+                            <c:if test="${flag}">
                                 <button type="button" class="btn btn-danger btn-xs">删除</button>
                             </c:if>
                             <c:if test="${empty alog.sign_time}">

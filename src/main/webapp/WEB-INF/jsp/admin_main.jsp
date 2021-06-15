@@ -42,40 +42,79 @@
                 </style>
 </head>
 <body >
-
 <div id="header"></div>
 
-<!-- 模态框（Modal） -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    &times;
-                </button>
-                <h4 class="modal-title" id="myModalLabel">
-                    温馨提示
-                </h4>
-            </div>
-            <div class="modal-body">
-                使用结束后请安全退出。
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">知道了
-                </button>
-            </div>
+<div style="padding: 70px 550px 10px">
+    <form   method="post" action="querybook.html" class="form-inline"  id="searchform">
+        <div class="input-group">
+           <input type="text" placeholder="输入图书名" class="form-control" id="search" name="searchWord" class="form-control">
+            <span class="input-group-btn">
+                            <input type="submit" value="搜索" class="btn btn-default">
+            </span>
         </div>
-    </div>
-</div>
-<c:if test="${!empty login}">
+    </form>
     <script>
-        $(function () {
-            $("#myModal").modal({
-                show: true
-            })
+        $("#searchform").submit(function () {
+            var val=$("#search").val();
+            if(val==''){
+                alert("请输入关键字");
+                return false;
+            }
         })
     </script>
+</div>
+<div style="position: relative;top: 10%">
+<c:if test="${!empty succ}">
+    <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert"
+                aria-hidden="true">
+            &times;
+        </button>
+        ${succ}
+    </div>
 </c:if>
+<c:if test="${!empty error}">
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert"
+                aria-hidden="true">
+            &times;
+        </button>
+        ${error}
+    </div>
+</c:if>
+</div>
+<div class="panel panel-default" style="width: 90%;margin-left: 5%">
+    <div class="panel-heading" style="background-color: #fff">
+        <h3 class="panel-title">
+            全部公告
+        </h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>题目</th>
+                <th>时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${announcements}" var="announcement">
+            <tr>
+                <td><c:out value="${announcement.id}"></c:out></td>
+                <td><c:out value="${announcement.title}"></c:out></td>
+                <td><c:out value="${announcement.time}"></c:out></td>
+                <td><a href="admin_announcement_detail.html?id<c:out value="${announcement.id}"></c:out>">
+                    <button type="button" class="btn btn-success btn-xs">详情</button>
+                </a></td>
+                <td><a href="updatebook.html?bookId=<c:out value="${announcement.id}"></c:out>"><button type="button" class="btn btn-info btn-xs">编辑</button></a></td>
+                <td><a href="deletebook.html?bookId=<c:out value="${announcement.id}"></c:out>"><button type="button" class="btn btn-danger btn-xs">删除</button></a></td>
+            </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 </body>
 </html>

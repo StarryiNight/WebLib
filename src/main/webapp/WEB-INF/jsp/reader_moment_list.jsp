@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>时间记录</title>
+    <title>记录</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/my.css">
     <script src="js/jquery-3.2.1.js"></script>
@@ -71,7 +71,7 @@
 <div class="panel panel-default" style="position:relative;top: 80px;width: 90%;margin-left: 5%">
     <div class="panel-heading">
         <h3 class="panel-title">
-            时间表
+            记录 ${detail.record_id}
         </h3>
     </div>
     <div class="panel-body">
@@ -79,34 +79,36 @@
             <thead>
             <tr>
                 <th>开始时间</th>
-                <th>结束时间</th>
-                <th>状态</th>
+                 <th>结束时间</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${allMoments}" var="moment">
-                                        <tr>
-                                          <td><c:out value="${moment.start_moment}"></c:out></td>
-                                          <td><c:out value="${moment.end_moment}"></c:out></td>
-                                           <c:set var="flag" value="false"/>
-                                                                          <c:forEach var="used" items="${usedMoments}">
-                                                                              <c:if test="${used.moment_id eq moment.moment_id}">
-                                                                                  <c:set var="flag" value="true"/>
-                                                                              </c:if>
-                                                                          </c:forEach>
-                                                                          <c:if test="${flag}">
-                                                                          <td><font style="color: red">已被预定</font></td>
+             <c:forEach items="${allRecord}" var="alog">
+                             <tr>
+                                 <td><fmt:formatDate value="${alog.start_time}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
+                                  <td><fmt:formatDate value="${alog.end_time}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
+                                  <c:set var="flag" value="false"/>
+                                                      <c:forEach var="used" items="${usedMoments}">
+                                                          <c:if test="${used.moment_id eq moment.moment_id}">
+                                                              <c:set var="flag" value="true"/>
+                                                          </c:if>
+                                                      </c:forEach>
+                                                      <c:if test="${flag}">
+                                                          <td>
+                                                          <a>
+                                                              <button type="button" class="btn btn-defalut btn-xs">无法预定</button>
+                                                          </a>
+                                                          </td>
+                                                      </c:if>
+                                                      <c:if test="${not flag}">
+                                                              <td><a href="record_add_do.html?record_id=<c:out value="${record.record_id}"></c:out>">
+                                                                  <button type="button" class="btn btn-primary btn-xs">预定</button>
+                                                              </a></td>
+                                                      </c:if>
 
-                                                                          </c:if>
-                                                                          <c:if test="${not flag}">
-                                                                          <td><font style="color: green">可预定</font></td>
-
-                                                                          </c:if>
-                                            <td><a href="updatemoment.html?moment_id=<c:out value="${moment.moment_id}"></c:out>"><button type="button" class="btn btn-info btn-xs">编辑</button></a></td>
-                                            <td><a href="deletemoment.html?moment_id=<c:out value="${moment.moment_id}"></c:out>"><button type="button" class="btn btn-danger btn-xs">删除</button></a></td>
-                                        </tr>
-                                    </c:forEach>
-            </tbody>
+                             </tr>
+                         </c:forEach>
+                        </tbody>
         </table>
     </div>
 </div>

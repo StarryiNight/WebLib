@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 
 @Controller
 public class AnnouncementController {
@@ -52,14 +53,6 @@ public class AnnouncementController {
         return modelAndView;
     }
 
-    @RequestMapping("/reader_announcement_detail.html")
-    public ModelAndView readerAnnouncementDetail(HttpServletRequest request) {
-        long announcementId = Long.parseLong(request.getParameter("announcement_id"));
-        Announcement announcement = announcementService.getAnnouncement(announcementId);
-        ModelAndView modelAndView = new ModelAndView("reader_announcement_detail");
-        modelAndView.addObject("detail", announcement);
-        return modelAndView;
-    }
 
     @RequestMapping("/updateannouncement.html")
     public ModelAndView announcementEdit(HttpServletRequest request) {

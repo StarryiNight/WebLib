@@ -17,8 +17,7 @@ import java.util.ArrayList;
 public class SeatController {
     @Autowired
     private SeatService seatService;
-    @Autowired
-    private RoomService roomService;
+
 
     @RequestMapping("/deleteseat.html")
     public String deleteBook(HttpServletRequest request, RedirectAttributes redirectAttributes) {
@@ -37,7 +36,7 @@ public class SeatController {
     }
 
     @RequestMapping("/seat_add_do.html")
-    public String addSeatDo(long num,long seat_id,long room_id, RedirectAttributes redirectAttributes) {
+    public String addSeatDo(long num, long seat_id, long room_id, RedirectAttributes redirectAttributes) {
         if (seatService.addSeat(num, seat_id, room_id)) {
             redirectAttributes.addFlashAttribute("succ", "增加座位成功");
         } else {
@@ -88,6 +87,11 @@ public class SeatController {
         return "redirect:/admin_room_seats.html";
     }
 
-
-
+    @RequestMapping("/admin_seat_list.html")
+    public ModelAndView allSeatList(HttpServletRequest request) {
+        ArrayList<Seat> seats = seatService.seatList();
+        ModelAndView modelAndView = new ModelAndView("admin_seat_list");
+        modelAndView.addObject("seat", seats);
+        return modelAndView;
+    }
 }

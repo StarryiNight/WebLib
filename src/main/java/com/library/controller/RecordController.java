@@ -30,7 +30,7 @@ public class RecordController {
         } else {
             redirectAttributes.addFlashAttribute("error", "预订失败！");
         }
-        return "redirect:/reader_record_list.html";
+        return "redirect:/admin_record_list.html";
     }
 
     @RequestMapping("/updaterecord.html")
