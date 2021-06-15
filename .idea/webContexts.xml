@@ -6,6 +6,7 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin_record_list.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/lib/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/lib" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/reader_seats.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
       </map>
     </option>
   </component>

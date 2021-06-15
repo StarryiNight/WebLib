@@ -23,14 +23,15 @@ public class LoginController {
 
     private LoginService loginService;
 
-    @Autowired
-    private ReaderInfoService readerInfoService;
+
 
     @Autowired
     public void setLoginService(LoginService loginService) {
         this.loginService = loginService;
     }
 
+    @Autowired
+    private ReaderInfoService readerInfoService;
 
     @RequestMapping(value = {"/", "/login.html"})
     public String toLogin(HttpServletRequest request) {

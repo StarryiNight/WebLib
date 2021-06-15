@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.library.dao.MomentDao">
+    <insert id="addMoment" parameterType="com.library.bean.Moment">
+        insert into moment
+        values (null, #{start_moment}, #{end_moment})
+    </insert>
+    <update id="editMoment" parameterType="com.library.bean.Moment">
+        update moment set start_moment=#{start_moment},end_moment=#{end_moment}
+                       where moment_id=#{moment_id}
+    </update>
+    <select id="getAllMoments" resultType="com.library.bean.Moment">
+        select * from moment
+    </select>
+
+    <select id="getMoment" resultType="com.library.bean.Moment" parameterType="Integer">
+        select * from moment where moment_id = #{moment_id}
+    </select>
+    <delete id="deleteMoment" parameterType="Integer">
+        delete from moment where moment_id = #{moment_id}
+    </delete>
+    <select id="getMomentCount" resultType="Integer">
+        select count(*)
+        from moment
+    </select>
+    <select id="usedMoment" resultType="com.library.bean.Moment" parameterType="long">
+        SELECT  *
+        FROM moment
+        WHERE
+        start_moment &lt;= (select DATE_FORMAT(start_time,'%H:%i:%s') from record where record_id =#{record_id} )
+        and end_moment>=(select DATE_FORMAT(start_time,'%H:%i:%s') from record where record_id=#{record_id})
+
+        or start_moment &lt; (select DATE_FORMAT(end_time,'%H:%i:%s') from record where record_id =#{record_id})
+        and end_moment>=(select DATE_FORMAT(end_time,'%H:%i:%s') from record where record_id=#{record_id})
+    </select>
+</mapper>

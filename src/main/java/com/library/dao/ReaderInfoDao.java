@@ -12,6 +12,7 @@ import java.util.List;
 public class ReaderInfoDao {
 
     private final static String NAMESPACE = "com.library.dao.ReaderInfoDao.";
+
     @Resource
     private SqlSessionTemplate sqlSessionTemplate;
 

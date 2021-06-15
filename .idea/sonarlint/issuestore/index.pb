@@ -7,8 +7,6 @@ a
 1src/main/webapp/WEB-INF/jsp/admin_reader_edit.jsp,a\d\ad560f4a76d592df57d1471861b087bc63befd33
 Z
 *src/main/java/com/library/dao/RoomDao.java,f\2\f2cc3a6f7145e6010e8bb141c74e86c07a006a34
-[
-+src/main/java/com/library/dao/AdminDao.java,4\9\49ea885571b1adfeb2f4bf292c99c9c94b672823
 X
 (src/main/java/com/library/bean/Room.java,7\e\7e45b9fb2313d3c2adeda4b89efc483747cfd3d4
 _
@@ -23,3 +21,15 @@ h
 8src/main/java/com/library/controller/SeatController.java,2\2\22fc75398368c8c2bf0f5978d0a81231702d2c19
 h
 8src/main/java/com/library/controller/RoomController.java,b\b\bbbbb80ae2528ae4223fe06dc676a4589187161c
+d
+4src/main/java/com/library/service/RecordService.java,e\d\ede06e38e924330cf990d851dfbf521b833935c6
+[
++src/main/java/com/library/dao/AdminDao.java,4\9\49ea885571b1adfeb2f4bf292c99c9c94b672823
+Z
+*src/main/webapp/WEB-INF/jsp/admin_main.jsp,6\3\63348a41aa818b95113738a8cafd76e45bb0e7a3
+Y
+)src/main/webapp/static/js/jquery-3.2.1.js,c\8\c81d30b8ee9b0edeb5f24178c3a985ec0dc17a98
+;
+library.sql,6\9\69cbddce881c3a07ddc1c62da47a25fd05adde37
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec

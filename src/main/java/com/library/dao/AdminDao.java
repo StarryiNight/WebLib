@@ -11,6 +11,7 @@ import java.util.Map;
 public class AdminDao {
 
     private final static String NAMESPACE = "com.library.dao.AdminDao.";
+
     @Resource
     private SqlSessionTemplate sqlSessionTemplate;
 

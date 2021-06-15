@@ -44,4 +44,9 @@
           and phone = #{phone}
           and level = #{level}
     </select>
+    <select id="orderReader" resultType="com.library.bean.ReaderInfo">
+        SELECT *
+        FROM `reader_info`
+        ORDER BY `level` DESC
+    </select>
 </mapper>
