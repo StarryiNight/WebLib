@@ -28,7 +28,7 @@ public class MomentDao {
         return sqlSessionTemplate.update(NAMESPACE + "editMoment", moment);
     }
 
-    public Moment getMoment(final long MomentId) {
+    public Moment getMoment(final int  MomentId) {
         return sqlSessionTemplate.selectOne(NAMESPACE + "getMoment", MomentId);
     }
 

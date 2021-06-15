@@ -21,21 +21,17 @@ public class RecordController {
     private RecordService recordService;
 
 
-/*    @RequestMapping("/record_add.html")
-    public ModelAndView addRecord() {
-        return new ModelAndView("admin_record_add");
-    }
+
 
     @RequestMapping("/record_add_do.html")
     public String addRecordDo(Record record, RedirectAttributes redirectAttributes) {
-
         if (recordService.addRecord(record)) {
-            redirectAttributes.addFlashAttribute("succ", "记录添加成功！");
+            redirectAttributes.addFlashAttribute("succ", "预订成功！");
         } else {
-            redirectAttributes.addFlashAttribute("error", "记录添加失败！");
+            redirectAttributes.addFlashAttribute("error", "预订失败！");
         }
-        return "redirect:/admin_record_list.html";
-    }*/
+        return "redirect:/reader_record_list.html";
+    }
 
     @RequestMapping("/updaterecord.html")
     public ModelAndView recordEdit(HttpServletRequest request) {
