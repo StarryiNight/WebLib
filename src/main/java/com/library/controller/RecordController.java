@@ -118,7 +118,7 @@ public class RecordController {
         } else {
             redirectAttributes.addFlashAttribute("error", "签到失败！");
         }
-        return "redirect:/admin_record_list.html";
+        return "redirect:/myrecord.html";
     }
 
 

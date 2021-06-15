@@ -17,12 +17,6 @@ X
 (src/main/java/com/library/bean/Seat.java,1\3\137802e77a944305372c7364cfff4cf0dc8ee590
 b
 2src/main/java/com/library/service/SeatService.java,3\7\3719b2e6efe64ea66279640da61414a5fe0176fc
-h
-8src/main/java/com/library/controller/SeatController.java,2\2\22fc75398368c8c2bf0f5978d0a81231702d2c19
-h
-8src/main/java/com/library/controller/RoomController.java,b\b\bbbbb80ae2528ae4223fe06dc676a4589187161c
-d
-4src/main/java/com/library/service/RecordService.java,e\d\ede06e38e924330cf990d851dfbf521b833935c6
 [
 +src/main/java/com/library/dao/AdminDao.java,4\9\49ea885571b1adfeb2f4bf292c99c9c94b672823
 Z

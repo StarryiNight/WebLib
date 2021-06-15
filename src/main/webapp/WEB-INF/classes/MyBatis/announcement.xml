@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.library.dao.AnnouncementDao">
+    <insert id="addAnnouncement" parameterType="com.library.bean.Announcement">
+        insert into announcement values
+        (null, #{title}, #{article}, now())
+    </insert>
+    <update id="editAnnouncement" parameterType="com.library.bean.Announcement">
+        update announcement set title=#{title}, article=#{article},
+                             time=#{time} 
+        where id=#{id}
+    </update>
+    <select id="getAllAnnouncements" resultType="com.library.bean.Announcement">
+        select * from announcement
+    </select>
+    <select id="getAnnouncement" resultType="com.library.bean.Announcement" parameterType="long">
+        select * from announcement where id = #{id}
+    </select>
+    <delete id="deleteAnnouncement" parameterType="long">
+        delete from announcement where id = #{id}
+    </delete>
+</mapper>

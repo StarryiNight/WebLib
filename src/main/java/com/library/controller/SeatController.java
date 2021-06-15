@@ -1,5 +1,6 @@
 package com.library.controller;
 
+import com.library.bean.Room;
 import com.library.bean.Seat;
 import com.library.service.RoomService;
 import com.library.service.SeatService;
@@ -48,6 +49,17 @@ public class SeatController {
 
     @RequestMapping("/admin_room_seats.html")
     public ModelAndView adminRoomDetail(HttpServletRequest request) {
+        long room_id = Long.parseLong(request.getParameter("room_id"));
+        ArrayList<Seat> seats = seatService.roomSeatList(room_id);
+        ArrayList<Seat> usedSeats = seatService.roomSeatUsed(room_id);
+        ModelAndView modelAndView = new ModelAndView("admin_room_seats");
+        modelAndView.addObject("seats", seats);
+        modelAndView.addObject("usedSeats", usedSeats);
+        return modelAndView;
+    }
+
+    @RequestMapping("/reader_room_seats.html")
+    public ModelAndView RoomDetail(HttpServletRequest request) {
         long room_id = Long.parseLong(request.getParameter("room_id"));
         ArrayList<Seat> seats = seatService.roomSeatList(room_id);
         ArrayList<Seat> usedSeats = seatService.roomSeatUsed(room_id);

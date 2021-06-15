@@ -1,8 +1,10 @@
 package com.library.controller;
 
 import com.library.bean.Admin;
+import com.library.bean.Announcement;
 import com.library.bean.ReaderCard;
 import com.library.bean.ReaderInfo;
+import com.library.service.AnnouncementService;
 import com.library.service.LoginService;
 import com.library.service.ReaderInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,9 @@ public class LoginController {
 
     @Autowired
     private ReaderInfoService readerInfoService;
+
+    @Autowired
+    private AnnouncementService announcementService;
 
     @RequestMapping(value = {"/", "/login.html"})
     public String toLogin(HttpServletRequest request) {
@@ -80,12 +85,23 @@ public class LoginController {
         ModelAndView modelAndView = new ModelAndView("admin_main");
         ArrayList<ReaderInfo> readerInfos = readerInfoService.orderReader();
         modelAndView.addObject("order", readerInfos);
+
+        ArrayList<Announcement> announcements = announcementService.getAllAnnouncements();
+        modelAndView.addObject("announcements", announcements);
+
         return modelAndView;
     }
 
     @RequestMapping("/reader_main.html")
     public ModelAndView toReaderMain(HttpServletResponse response) {
-        return new ModelAndView("reader_main");
+        ModelAndView modelAndView = new ModelAndView("reader_main");
+
+        ArrayList<ReaderInfo> readerInfos = readerInfoService.orderReader();
+        modelAndView.addObject("order", readerInfos);
+
+        ArrayList<Announcement> announcements = announcementService.getAllAnnouncements();
+        modelAndView.addObject("announcements", announcements);
+        return modelAndView;
     }
 
     @RequestMapping("/admin_repasswd.html")
