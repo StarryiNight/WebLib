@@ -13,8 +13,6 @@ _
 /src/main/webapp/WEB-INF/jsp/admin_lend_list.jsp,0\d\0d66e61a58ae3225bdd65f9d3c9a13c1a10f16ba
 `
 0src/main/webapp/WEB-INF/classes/MyBatis/seat.xml,b\0\b0ffb6236cc617475bbb5435c43d295cbadf9f7b
-X
-(src/main/java/com/library/bean/Seat.java,1\3\137802e77a944305372c7364cfff4cf0dc8ee590
 [
 +src/main/java/com/library/dao/AdminDao.java,4\9\49ea885571b1adfeb2f4bf292c99c9c94b672823
 Y
@@ -43,8 +41,6 @@ j
 :src/main/java/com/library/service/AnnouncementService.java,7\4\7459d09bc96582d2f2dc4a45cc3fa903e3d44fee
 b
 2src/main/java/com/library/dao/AnnouncementDao.java,8\2\82732f975000571d902b8c3b9856a7bfaedb2a41
-a
-1src/main/webapp/WEB-INF/jsp/admin_record_list.jsp,4\4\44ee7d42c41c190951f9077bc7cf6f834f89ffe0
 c
 3src/main/java/com/library/service/LoginService.java,3\a\3a05ced496350e8d8435fed278333de8a813c403
 h
@@ -59,9 +55,3 @@ d
 4src/main/java/com/library/service/MomentService.java,3\1\3157e48b7e7265a52224d2151994b252a16d4f5b
 \
 ,src/main/java/com/library/dao/MomentDao.java,f\b\fbc3858e7e333cd3cf4cfa8955aedd03ba8bc6b5
-d
-4src/main/java/com/library/service/RecordService.java,e\d\ede06e38e924330cf990d851dfbf521b833935c6
-\
-,src/main/java/com/library/dao/RecordDao.java,e\5\e5746b669c018382cb05e1c3e934add23c46188b
-a
-1src/main/webapp/WEB-INF/jsp/admin_moment_list.jsp,3\5\35b2b1275a4efe8ab572f87276c38bd45b4d0bd8

@@ -76,4 +76,12 @@ public class MomentController {
         return modelAndView;
     }
 
+    @RequestMapping("/admin_all_moment_list.html")
+    public ModelAndView adminAllMomentList(HttpServletRequest request) {
+        ArrayList<Moment> allMoments = momentService.getAllMoments();
+        ModelAndView modelAndView = new ModelAndView("admin_all_moment_list");
+        modelAndView.addObject("allMoments", allMoments);
+        return modelAndView;
+    }
+
 }
