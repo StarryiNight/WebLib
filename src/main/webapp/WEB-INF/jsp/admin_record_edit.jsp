@@ -40,7 +40,7 @@
     </style>
 </head>
 <body >
-
+<center>
 <div id="header" style="padding-bottom: 80px"></div>
 
 <div class="col-xs-6 col-md-offset-3" style="position: relative;">
@@ -50,19 +50,32 @@
         </div>
         <div class="panel-body">
             <form action="record_edit_do.html?record_id=${detail.record_id}" method="post" id="recordedit" >
-
-                <div class="input-group">
-                    <span  class="input-group-addon">开始时间</span>
-                    <input type="text" class="form-control" name="start_time" id="start_time" value="${detail.record_id}">
+ <div class="input-group">
+                    <span  class="input-group-addon">读者证号</span>
+                    <input type="text" class="form-control" name="reader_id" id="reader_id" value="${detail.reader_id}">
                 </div>
                  <div class="input-group">
+                                    <span  class="input-group-addon">座位</span>
+                                    <input type="text" class="form-control" name="seat_id" id="seat_id" value="${detail.seat_id}">
+                                </div>
+                                 <div class="input-group">
+                                                    <span  class="input-group-addon">开始时间</span>
+                                                    <input type="text" class="form-control" name="start_time" id="start_time" value="${detail.record_id}">
+                                                </div>
+
+                <div class="input-group">
                     <span  class="input-group-addon">结束时间</span>
-                    <input type="text" class="form-control" name="end_time" id="end_time" value="${detail.record_id}">
+                    <input type="text" class="form-control" name="end_time" id="end_time" value="${detail.end_time}">
+                </div>
+                 <div class="input-group">
+                    <span  class="input-group-addon">签到时间</span>
+                    <input type="text" class="form-control" name="sign_time" id="sign_time" value="${detail.sign_time}">
                  </div>
+
                 <input type="submit" value="确定" class="btn btn-success btn-sm" class="text-left">
                 <script>
                     $("#seatedit").submit(function () {
-                        if($("#start_time").val()==''||$("#end_time").val()==''){
+                        if($("#start_time").val()==''||$("#end_time").val()==''||$("#sign_time").val()==''||$("#reader_id").val()==''||$("#seat_id").val()==''){
                             alert("请填入完整时间信息！");
                             return false;
                         }
@@ -73,6 +86,6 @@
     </div>
 
 </div>
-
+</center>
 </body>
 </html>

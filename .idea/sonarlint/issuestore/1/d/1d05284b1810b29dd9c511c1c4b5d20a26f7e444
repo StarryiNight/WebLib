@@ -1,0 +1,13 @@
+
+[
+java:S1192z"FDefine a constant instead of duplicating this literal "error" 4 times.(²›ã"
+v
+java:S1192"_Define a constant instead of duplicating this literal "redirect:/reader_repasswd.html" 3 times.(ØúÑ°
+t
+java:S1192x"^Define a constant instead of duplicating this literal "redirect:/admin_repasswd.html" 3 times.(òú»‡
+e
+java:S1192E"JDefine a constant instead of duplicating this literal "stateCode" 3 times.(ú¯şÿÿÿÿ
+_
+java:S44886"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(–ÂªR
+Q
+java:S2441D";Make "Admin" serializable or don't store it in the session.(îÜ´“

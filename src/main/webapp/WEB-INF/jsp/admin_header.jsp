@@ -5,8 +5,8 @@
         <div class="navbar-header" style="margin-left: 8%;margin-right: 1%">
             <a class="navbar-brand" href="admin_main.html" style="font-family: 华文行楷; font-size: 250%; color: white">图书管理系统</a>
         </div>
-        <div class="collapse navbar-collapse" >
-            <ul class="nav navbar-nav navbar-left">
+        <div class="collapse navbar-collapse navbar-top" >
+            <ul class="nav navbar-nav navbar-left ">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">
                         图书管理
@@ -46,9 +46,9 @@
                           <li><a href="seat_add.html">增加座位</a></li>
                           </li>
                           <li class="divider"></li>
-                          <li><a href="admin_moment_list.html">时刻表</a></li>
+                          <li><a href="admin_all_moment_list.html">时刻表</a></li>
                           <li class="dropdown">
-                          <li><a href="admin_record_add.html">增加时刻</a></li>
+                          <li><a href="moment_add.html">增加时刻</a></li>
                            </li>
                           </ul>
                  </li>

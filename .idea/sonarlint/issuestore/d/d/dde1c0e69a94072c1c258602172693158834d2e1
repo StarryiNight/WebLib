@@ -1,0 +1,13 @@
+
+‹
+java:S1319""pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ğúÀ’úÿÿÿÿ
+‹
+java:S1319&"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(éí±¹şÿÿÿÿ
+‹
+java:S1319."pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ì‹øëøÿÿÿÿ
+‹
+java:S1319."pThe type of the "lends" object should be an interface such as "List" rather than the implementation "ArrayList".(Ì‹øëøÿÿÿÿ
+z
+java:S1488"_Immediately return this expression instead of assigning it to the temporary variable "newDate".(ÒÚÒ¼ÿÿÿÿÿ
+H
+java:S1128"2Remove this unused import 'com.library.bean.Book'.(Ë›èã

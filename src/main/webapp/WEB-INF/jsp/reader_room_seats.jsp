@@ -2,14 +2,14 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>阅览室ID</title>
+    <title>阅览室${detial.room_id}</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/my.css">
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/bootstrap.min.js" ></script>
     <script>
         $(function () {
-            $('#header').load('admin_header.html');
+            $('#header').load('reader_header.html');
         })
     </script>
     <style type="text/css">
@@ -67,18 +67,18 @@
 </c:if>
 </div>
 
-
-<div class="panel panel-default" style="position:relative;top: 80px;width: 90%;margin-left: 5%">
+<center>
+<div class="panel panel-default" style="position:relative;top: 10px;width: 50%;margin-left: 5%">
     <div class="panel-heading">
         <h3 class="panel-title">
-            阅览室 ${detail.room_id}
+            阅览室 ${detial.room_id}
         </h3>
     </div>
     <div class="panel-body">
         <table class="table table-hover" >
             <thead>
             <tr>
-                <th>座位ID</th>
+                <th>座位</th>
                 <th>当前是否可用</th>
             </tr>
             </thead>
@@ -108,5 +108,6 @@
         </table>
     </div>
 </div>
+</center>
 </body>
 </html>

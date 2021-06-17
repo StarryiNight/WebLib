@@ -24,4 +24,7 @@
     <delete id="deleteLend" parameterType="long">
         delete from lend_list where ser_num = #{ser_num}
     </delete>
+    <select id="getName" resultType="String" parameterType="long">
+        select name from book_info where book_id=#{book_id}
+    </select>
 </mapper>

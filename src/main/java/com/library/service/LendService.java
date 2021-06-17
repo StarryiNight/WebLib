@@ -1,5 +1,6 @@
 package com.library.service;
 
+import com.library.bean.Book;
 import com.library.bean.Lend;
 import com.library.dao.LendDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,4 +43,11 @@ public class LendService {
         return lendDao.deleteLend(serNum);
     }
 
+    public ArrayList<String> nameList(ArrayList<Lend> lends) {
+        ArrayList<String> name = new ArrayList<>();
+        for (Lend i : lends) {
+            name.add(lendDao.getName(i.getBookId()));
+        }
+        return name;
+    }
 }

@@ -61,7 +61,7 @@
                     <input type="text" class="form-control" name="birth" id="birth"  value="${readerInfo.birth}" >
                 </div>
                 <div class="input-group">
-                                    <span class="input-group-addon">会员等级</span>
+                                    <span class="input-group-addon">会员积分</span>
                                     <input type="text" class="form-control" name="level" id="level"  value="${readerInfo.level}" >
                 </div>
                 <div class="input-group">

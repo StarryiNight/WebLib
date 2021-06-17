@@ -119,8 +119,8 @@
 <div  id="login">
 
     <h1 class="tt">图 书 馆</h1>
-        <input type="text"  id="id" placeholder="用户名">
-        <input type="password"  id="passwd" placeholder="密码">
+        <input type="text" class="zz" id="id" placeholder="用户名">
+        <input type="password" class="zz" id="passwd" placeholder="密码">
         <div class="checkbox text-left">
             <label>
                 <input type="checkbox" id="remember">记住密码

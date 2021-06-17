@@ -53,4 +53,8 @@ public class LendDao {
     public int deleteLend(final long ser_num) {
         return sqlSessionTemplate.delete(NAMESPACE + "deleteLend", ser_num);
     }
+
+    public String getName(final long book_id) {
+        return sqlSessionTemplate.selectOne(NAMESPACE + "getName", book_id);
+    }
 }

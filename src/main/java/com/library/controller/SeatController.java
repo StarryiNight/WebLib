@@ -62,7 +62,7 @@ public class SeatController {
         long room_id = Long.parseLong(request.getParameter("room_id"));
         ArrayList<Seat> seats = seatService.roomSeatList(room_id);
         ArrayList<Seat> usedSeats = seatService.roomSeatUsed(room_id);
-        ModelAndView modelAndView = new ModelAndView("admin_room_seats");
+        ModelAndView modelAndView = new ModelAndView("reader_room_seats");
         modelAndView.addObject("seats", seats);
         modelAndView.addObject("usedSeats", usedSeats);
         return modelAndView;

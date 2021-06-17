@@ -78,7 +78,6 @@
                 <th>结束时间</th>
                 <th>签到时间</th>
                 <th>状态</th>
-                <th>删除</th>
             </tr>
             </thead>
             <tbody>
@@ -118,10 +117,10 @@
                     <td><a href="updaterecord.html?record_id=<c:out value="${alog.record_id}"></c:out>"><button type="button" class="btn btn-info btn-xs">编辑</button></a></td>
                         <a href="deleterecord.html?record_id=<c:out value='${alog.record_id}'></c:out>">
                             <c:if test="${flag}">
-                                <button type="button" class="btn btn-danger btn-xs">删除</button>
+                                <td><a href="deleterecord.html?record_id=<c:out value="${alog.record_id}"></c:out>"><button type="button" class="btn btn-danger btn-xs">删除</button></td>
                             </c:if>
-                            <c:if test="${empty alog.sign_time}">
-                                <button type="button" class="btn btn-default btn-xs" disabled="disabled">删除</button>
+                            <c:if test="${not flag}">
+                                <td><button type="button" class="btn btn-default btn-xs" disabled="disabled">删除</button></td>
                             </c:if>
                         </a>
                     </td>

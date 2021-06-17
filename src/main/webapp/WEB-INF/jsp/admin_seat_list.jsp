@@ -17,6 +17,10 @@
         html,body{
             height:100%;
         }
+        .panel{
+        width:50% !important ;
+        position: center !important ;
+        }
         body{
             margin: 0;
             padding: 0;
@@ -67,8 +71,8 @@
 </c:if>
 </div>
 
-
-<div class="panel panel-default" style="position:relative;top: 80px;width: 90%;margin-left: 5%">
+<center>
+<div class="panel panel-default" HorizontalAlign="Center" style="position:relative;top: 80px;width: 90%;margin-left: 5%">
     <div class="panel-heading">
         <h3 class="panel-title">
             所有座位
@@ -83,10 +87,10 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${seat}" var="room">
+            <c:forEach items="${seat}" var="seat">
                 <tr>
-                    <td><c:out value="${room.room_id}"></c:out></td>
-                    <td><c:out value="${room.seat_id}"></c:out></td>
+                    <td><c:out value="${seat.room_id}"></c:out></td>
+                    <td><c:out value="${seat.seat_id}"></c:out></td>
 
                     <td><a href="updateseat.html?seat_id=<c:out value="${seat.seat_id}"></c:out>"><button type="button" class="btn btn-info btn-xs">编辑</button></a></td>
                     <td><a href="deleteseat.html?seat_id=<c:out value="${seat.seat_id}"></c:out>"><button type="button" class="btn btn-danger btn-xs">删除</button></a></td>
@@ -96,5 +100,6 @@
         </table>
     </div>
 </div>
+</center>
 </body>
 </html>

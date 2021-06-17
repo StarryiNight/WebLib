@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
     <title>${readercard.name}的主页</title>
@@ -57,7 +58,8 @@
             ${error}
     </div>
 </c:if>
-<div class="col-xs-5 col-md-offset-3">
+<center>
+<div class="col-xs-5 col-md-offset-3" >
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">
@@ -80,7 +82,7 @@
                 </tr>
                 <tr>
                     <th>生日</th>
-                    <td>${readerinfo.birth}</td>
+                    <td><fmt:formatDate value="${readerinfo.birth}" pattern="yyyy-MM-dd HH"/></td>
                 </tr>
                 <tr>
                     <th>地址</th>
@@ -91,16 +93,18 @@
                     <td>${readerinfo.phone}</td>
                 </tr>
                 <tr>
-                    <th>会员等级</th>
+                    <th>会员积分</th>
                     <td>${readerinfo.level}</td>
                 </tr>
                 </tbody>
             </table>
+
         </div>
         <a class="btn btn-success btn-sm" href="reader_info_edit.html" role="button">修改</a>
     </div>
-</div>
 
+</div>
+</center>
 
 </body>
 </html>

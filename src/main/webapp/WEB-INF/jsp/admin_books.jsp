@@ -64,7 +64,7 @@
         })
     </script>
 </div>
-<div style="position: relative;top: 10%">
+<div style="position: relative;top: 0%">
 <c:if test="${!empty succ}">
     <div class="alert alert-success alert-dismissable">
         <button type="button" class="close" data-dismiss="alert"
@@ -86,7 +86,7 @@
 </div>
 <div class="panel panel-default" style="width: 90%;margin-left: 5%">
     <div class="panel-heading" style="background-color: #fff">
-        <h3 class="panel-title">
+        <h3 class="panel-title" style="position: relative>
             全部图书
         </h3>
     </div>
@@ -108,7 +108,7 @@
             <tbody>
             <c:forEach items="${books}" var="book">
             <tr>
-                <td><c:out value="${book.name}"></c:out></td>
+                <td><a href="admin_book_detail.html?bookId=<c:out value="${book.bookId}"></c:out>"><c:out value="${book.name}"></c:out></td>
                 <td><c:out value="${book.author}"></c:out></td>
                 <td><c:out value="${book.publish}"></c:out></td>
                 <td><c:out value="${book.isbn}"></c:out></td>

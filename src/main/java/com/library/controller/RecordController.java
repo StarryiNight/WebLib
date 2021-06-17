@@ -14,17 +14,24 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.Date;
 
 @Controller
 public class RecordController {
     @Autowired
     private RecordService recordService;
 
-
-
-
     @RequestMapping("/record_add_do.html")
-    public String addRecordDo(Record record, RedirectAttributes redirectAttributes) {
+    public String addRecordDo(Date start_time,Date end_time,HttpServletRequest request, RedirectAttributes redirectAttributes) {
+        ReaderCard readerCard = (ReaderCard) request.getSession().getAttribute("readercard");
+        long reader_id = readerCard.getReaderId();
+        long seat_id = Long.parseLong(request.getParameter("seat_id"));
+        Record record = new Record();
+        record.setStart_time(start_time);
+        record.setEnd_time(end_time);
+        record.setReader_id(reader_id);
+        record.setSeat_id(seat_id);
+
         if (recordService.addRecord(record)) {
             redirectAttributes.addFlashAttribute("succ", "预订成功！");
         } else {

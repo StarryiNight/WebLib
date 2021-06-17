@@ -1,5 +1,7 @@
 package com.library.controller;
 
+import com.library.bean.Book;
+import com.library.bean.Lend;
 import com.library.bean.ReaderCard;
 import com.library.service.BookService;
 import com.library.service.LendService;
@@ -10,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 
 @Controller
 public class LendController {
@@ -40,8 +43,10 @@ public class LendController {
     @RequestMapping("/mylend.html")
     public ModelAndView myLend(HttpServletRequest request) {
         ReaderCard readerCard = (ReaderCard) request.getSession().getAttribute("readercard");
+        ArrayList<Lend> arrayList = lendService.myLendList(readerCard.getReaderId());
         ModelAndView modelAndView = new ModelAndView("reader_lend_list");
-        modelAndView.addObject("list", lendService.myLendList(readerCard.getReaderId()));
+        modelAndView.addObject("name", lendService.nameList(arrayList));
+        modelAndView.addObject("list", arrayList);
         return modelAndView;
     }
 
@@ -79,4 +84,6 @@ public class LendController {
         }
         return "redirect:/reader_books.html";
     }
+
+
 }

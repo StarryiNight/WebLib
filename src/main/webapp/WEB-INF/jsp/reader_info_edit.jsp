@@ -72,7 +72,7 @@
                     <input type="text" class="form-control" name="phone" id="phone"  value="${readerinfo.phone}" >
                 </div>
                 <div class="input-group">
-                    <span  class="input-group-addon">会员等级</span>
+                    <span  class="input-group-addon">会员积分</span>
                     <input type="text" readonly="readonly" class="form-control" name="level" id="level" value="${readerinfo.level}">
                 </div>
                 <br/>

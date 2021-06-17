@@ -67,8 +67,8 @@
 </c:if>
 </div>
 
-
-<div class="panel panel-default" style="position:relative;top: 80px;width: 90%;margin-left: 5%">
+<center>
+<div class="panel panel-default" style="position:relative;top: 80px;width: 60%;margin-left: 5%">
     <div class="panel-heading">
         <h3 class="panel-title">
             全部座位
@@ -78,8 +78,8 @@
         <table class="table table-hover" >
             <thead>
             <tr>
-                <th>座位ID</th>
-                <th>当前是否可用</th>
+                <th>座位</th>
+                <th>状态</th>
             </tr>
             </thead>
             <tbody>
@@ -109,5 +109,6 @@
         </table>
     </div>
 </div>
+</center>
 </body>
 </html>

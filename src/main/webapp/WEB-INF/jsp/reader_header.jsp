@@ -27,7 +27,7 @@
                     </a>
                  </li>
                   <li >
-                     <a href="reader_record_list.html" >
+                     <a href="myrecord.html" >
                         我的座位
                      </a>
                   </li>

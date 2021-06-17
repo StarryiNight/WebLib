@@ -105,7 +105,7 @@
                     <input type="date" class="form-control" name="birth" id="birth"  >
                 </div>
                 <div class="input-group" style="padding-top: 20px;">
-                                    <span class="input-group-addon">会员等级</span>
+                                    <span class="input-group-addon">会员积分</span>
                                     <input type="integer" class="form-control" name="level" id="level"  >
                 </div>
                 <div class="input-group" style="padding-top: 20px;">

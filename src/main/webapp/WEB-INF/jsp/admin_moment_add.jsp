@@ -87,10 +87,10 @@
             <h3 class="panel-title">添加记录</h3>
         </div>
         <div class="panel-body">
-            <form action="moment_add_do.html" method="post" id="recordadd" >
+            <form action="moment_add_do.html" method="post" id="momentadd" >
                 <div class="input-group" style="padding-top: 20px;">
                     <span  class="input-group-addon">开始时间</span>
-                    <input  type="password" class="form-control" name="start_time" id="start_time" >
+                    <input  type="text" class="form-control" name="start_time" id="start_time" >
                 </div>
                 <div class="input-group" style="padding-top: 20px;">
                     <span class="input-group-addon">结束时间</span>
@@ -104,7 +104,7 @@
                     function mySubmit(flag){
                         return flag;
                     }
-                    $("#recordadd").submit(function () {
+                    $("#momentadd").submit(function () {
                         if($("#start_time").val()==''||$("#end_time").val()==''){
                             alert("请填入完整时间信息！");
                             return mySubmit(false);

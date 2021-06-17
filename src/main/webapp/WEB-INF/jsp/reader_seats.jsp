@@ -9,7 +9,7 @@
     <script src="js/bootstrap.min.js" ></script>
     <script>
         $(function () {
-            $('#header').load('admin_header.html');
+            $('#header').load('reader_header.html');
         })
     </script>
     <style type="text/css">
@@ -78,7 +78,7 @@
         <table class="table table-hover" >
             <thead>
             <tr>
-                <th>阅览室ID</th>
+                <th>读者ID</th>
                 <th>座位ID</th>
                 <th>开始时间</th>
                 <th>结束时间</th>
@@ -87,7 +87,7 @@
             <tbody>
             <c:forEach items="${records}" var="record">
                                        <tr>
-                                       <td><c:out value="${record.room_id}"></c:out></td>
+                                       <td><c:out value="${record.reader_id}"></c:out></td>
                                        <td><c:out value="${record.seat_id}"></c:out></td>
                                        <td><c:out value="${record.start_time}"></c:out></td>
                                        <td><c:out value="${record.end_time}"></c:out></td>

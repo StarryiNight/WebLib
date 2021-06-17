@@ -1,15 +1,21 @@
 package com.library.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Record {
     long record_id;
     long seat_id;
     long reader_id;
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     Date start_time;
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     Date end_time;
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     Date sign_time;
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     public Date getSign_time() {
         return sign_time;
     }
@@ -42,6 +48,7 @@ public class Record {
         this.reader_id = reader_id;
     }
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     public Date getStart_time() {
         return start_time;
     }
@@ -50,6 +57,7 @@ public class Record {
         this.start_time = start_time;
     }
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     public Date getEnd_time() {
         return end_time;
     }
