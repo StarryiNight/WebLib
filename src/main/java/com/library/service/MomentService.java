@@ -15,7 +15,10 @@ public class MomentService {
     public ArrayList<Moment> getAllMoments() {
         return momentDao.getAllMoments();
     }
-    
+
+    public ArrayList<Moment> exceedMoment() {
+        return momentDao.exceedMoment();
+    }
 
     public boolean addMoment(Moment moment) {
         return momentDao.addMoment(moment) > 0;

@@ -6,7 +6,7 @@
     </select>
     <insert id="addRecord" parameterType="com.library.bean.Record">
         insert into record values
-           (#{record_id},#{seat_id},#{reader_id},#{start_time},#{end_time},null)
+           (null,#{seat_id},#{reader_id},#{start_time},#{end_time},null)
     </insert>
     <select id="getRecord" resultType="com.library.bean.Record"  parameterType="long">
         select * from record where record_id=#{record_id}
@@ -44,6 +44,10 @@
     </select>
     <select id="allUnSignedRecord" resultType="com.library.bean.Record" parameterType="long">
         select * from record where now()&lt;=end_time and NOW()>=start_time
+                               and sign_time is  null
+    </select>
+    <select id="allUnSignedTime" resultType="com.library.bean.Record" parameterType="long">
+        select * from record where now()&lt;=end_time and NOW()&lt;start_time
                                and sign_time is  null
     </select>
 </mapper>

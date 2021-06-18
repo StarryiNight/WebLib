@@ -96,7 +96,7 @@ padding-left: 110 !important;
     </a>
 </div>
 <center>
-   <div class="panel panel-default" style="position:relative;top: 258px;width: 55%;margin-left: 0%">
+   <div class="panel panel-default" style="position:relative;top: 258px;width: 53%;margin-left: 0%">
        <div class="panel-heading">
            <h3 class="panel-title">
                公告栏

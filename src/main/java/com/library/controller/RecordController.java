@@ -20,15 +20,19 @@ import java.util.Date;
 public class RecordController {
     @Autowired
     private RecordService recordService;
+    @Autowired
+    private MomentService momentService;
 
     @RequestMapping("/record_add_do.html")
-    public String addRecordDo(Date start_time,Date end_time,HttpServletRequest request, RedirectAttributes redirectAttributes) {
+    public String addRecordDo(HttpServletRequest request, RedirectAttributes redirectAttributes) {
         ReaderCard readerCard = (ReaderCard) request.getSession().getAttribute("readercard");
         long reader_id = readerCard.getReaderId();
         long seat_id = Long.parseLong(request.getParameter("seat_id"));
+        int moment_id = Integer.parseInt(request.getParameter("moment_id"));
+        Moment moment = momentService.getMoment(moment_id);
         Record record = new Record();
-        record.setStart_time(start_time);
-        record.setEnd_time(end_time);
+        record.setStart_time(moment.getStart_moment());
+        record.setEnd_time(moment.getEnd_moment());
         record.setReader_id(reader_id);
         record.setSeat_id(seat_id);
 
@@ -37,7 +41,7 @@ public class RecordController {
         } else {
             redirectAttributes.addFlashAttribute("error", "预订失败！");
         }
-        return "redirect:/admin_record_list.html";
+        return "redirect:/myrecord.html";
     }
 
     @RequestMapping("/updaterecord.html")
@@ -95,9 +99,11 @@ public class RecordController {
         ArrayList<Record> allRecord = recordService.getAllRecords();
         ArrayList<Record> exceedRecord = recordService.allExceedRecord();
         ArrayList<Record> unSignedRecord =recordService.allUnSignedRecord();
+        ArrayList<Record> allUnSignedTime =recordService.allUnSignedTime();
         modelAndView.addObject("allRecord", allRecord);
         modelAndView.addObject("exceedRecord", exceedRecord);
         modelAndView.addObject("unSignedRecord", unSignedRecord);
+        modelAndView.addObject("allUnSignedTime", allUnSignedTime);
         return modelAndView;
     }
 

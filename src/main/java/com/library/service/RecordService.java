@@ -8,6 +8,8 @@ import com.library.dao.RecordDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -26,6 +28,26 @@ public class RecordService {
     }
 
     public boolean addRecord(Record record) {
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm:ss");
+        java.util.Date date=new java.util.Date();
+        String str=sdf1.format(date);
+
+        String start = sdf2.format(record.getStart_time());
+        String end = sdf2.format(record.getEnd_time());
+
+        start = str + " "+start;
+        end = str + " " + end;
+
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            record.setStart_time(sdf.parse(start));
+            record.setEnd_time(sdf.parse(end));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
         return recordDao.addRecord(record) > 0;
     }
 
@@ -68,6 +90,8 @@ public class RecordService {
         return usedMoment;
     }
 
+
+
     public ArrayList<Record> unSignedRecord(Long reader_id) {
         return recordDao.unSignedRecord(reader_id);
     }
@@ -82,5 +106,9 @@ public class RecordService {
 
     public ArrayList<Record> allExceedRecord(){
         return recordDao.allExceedRecord();
+    }
+
+    public ArrayList<Record> allUnSignedTime(){
+        return recordDao.allUnSignedTime();
     }
 }

@@ -37,7 +37,7 @@
     background-color: #ffffff63 !important;
 }
 .carousel-indicators{
-padding-left: 110 !important;
+padding-left: 110px !important;
 }
         @keyframes bganimation {
             0%{
@@ -54,8 +54,8 @@ padding-left: 110 !important;
 </head>
 <body >
 
-
 <div id="header"></div>
+
 
 <div style="padding: 70px 550px 10px">
 
@@ -63,7 +63,7 @@ padding-left: 110 !important;
 </div>
 <div style="position: relative;top: 0%">
 </div>
-<div id="header"></div>
+
 <div id="myCarousel" class="carousel slide">
     <ol class="carousel-indicators" style="bottom: -260px;left:45%">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -96,7 +96,7 @@ padding-left: 110 !important;
     </a>
 </div>
 <center>
-   <div class="panel panel-default" style="position:relative;top: 258px;width: 55%;margin-left: 0%">
+   <div class="panel panel-default" style="position:relative;top: 258px;width: 53%;margin-left: 0%">
        <div class="panel-heading">
            <h3 class="panel-title">
                公告栏
@@ -114,8 +114,8 @@ padding-left: 110 !important;
             <tbody>
 
             <c:forEach items="${announcements}" var="announcement">
-            <tr>
-                <td><a href="admin_announcement_detail.html?announcement_id=<c:out value="${announcement.id}"></c:out>"><c:out value="${announcement.title}"></c:out></td>
+
+                <td><a href="admin_announcement_detail.html?announcement_id=<c:out value="${announcement.id}"></c:out>"><c:out value="${announcement.title}"></c:out></a></td>
 
                                 <td><c:out value="${announcement.time}"></c:out></td>
                 <td><a href="updateannouncement.html?announcement_id=<c:out value="${announcement.id}"></c:out>"><button type="button" style="width:35px; float:right;" class="btn btn-info btn-xs">编辑</button></a></td>

@@ -70,7 +70,9 @@ public class MomentController {
         long seat_id = Long.parseLong(request.getParameter("seat_id"));
         ArrayList<Moment> allMoments = momentService.getAllMoments();
         ArrayList<Moment> usedMoments = recordService.usedMoment(seat_id);
+        ArrayList<Moment> exceedMoment = momentService.exceedMoment();
         ModelAndView modelAndView = new ModelAndView("reader_moment_list");
+        modelAndView.addObject("exceedMoment", exceedMoment);
         modelAndView.addObject("allMoments", allMoments);
         modelAndView.addObject("usedMoments", usedMoments);
         return modelAndView;

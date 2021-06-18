@@ -73,5 +73,10 @@ public class RecordDao {
         return (ArrayList < Record >) result;
     }
 
+    public ArrayList<Record> allUnSignedTime() {
+        List<Record> result = sqlSessionTemplate.selectList(NAMESPACE + "allUnSignedTime");
+        return (ArrayList < Record >) result;
+    }
+
 
 }

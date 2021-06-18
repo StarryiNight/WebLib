@@ -44,4 +44,9 @@ public class MomentDao {
         List<Moment> result = sqlSessionTemplate.selectList(NAMESPACE + "usedMoment", record_id);
         return (ArrayList<Moment>) result;
     }
+
+    public ArrayList<Moment> exceedMoment() {
+        List<Moment> result = sqlSessionTemplate.selectList(NAMESPACE + "exceedMoment");
+        return (ArrayList<Moment>) result;
+    }
 }
