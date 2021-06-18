@@ -71,3 +71,11 @@ i
 .src/main/webapp/WEB-INF/jsp/admin_repasswd.jsp,1\a\1a8722223bd965b081dacf562b456acfe42423ed
 h
 8src/main/java/com/library/controller/LendController.java,7\3\7380f3b0f2f88cdc2c4e4ae3b8b8927ee5d44a3d
+Z
+*src/main/webapp/WEB-INF/jsp/admin_main.jsp,6\3\63348a41aa818b95113738a8cafd76e45bb0e7a3
+`
+0src/main/webapp/WEB-INF/classes/book-context.xml,e\5\e587995c82cd4330f0c981464b886937bfd40a29
+b
+2src/main/webapp/WEB-INF/classes/MyBatis/record.xml,f\b\fb9ea1ec0e307e33c9379029ada6bf9e3b3fcf0b
+[
++src/main/webapp/WEB-INF/jsp/reader_main.jsp,f\c\fc943ad414a95e5c3f98cfff0f323c48ff07feb2

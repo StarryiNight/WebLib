@@ -114,9 +114,11 @@ public class RecordController {
         ArrayList<Record> myAllRecord = recordService.myRecordList(readerCard.getReaderId());
         ArrayList<Record> exceedRecord = recordService.exceedRecord(readerCard.getReaderId());
         ArrayList<Record> unSignedRecord =recordService.unSignedRecord(readerCard.getReaderId());
+        ArrayList<Record> allUnSignedTime =recordService.allUnSignedTime();
         modelAndView.addObject("allRecord", myAllRecord);
         modelAndView.addObject("exceedRecord", exceedRecord);
         modelAndView.addObject("unSignedRecord", unSignedRecord);
+        modelAndView.addObject("allUnSignedTime", allUnSignedTime);
         return modelAndView;
     }
 
