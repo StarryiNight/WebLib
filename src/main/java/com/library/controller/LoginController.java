@@ -92,7 +92,7 @@ public class LoginController {
         return modelAndView;
     }
 
-    @RequestMapping("/reader_main.html")
+    @RequestMapping("/reader_main")
     public ModelAndView toReaderMain(HttpServletResponse response) {
         ModelAndView modelAndView = new ModelAndView("reader_main");
 

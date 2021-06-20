@@ -18,27 +18,25 @@
         html,body{
             height:100%;
         }
-        body{
-            margin: 0;
-            padding: 0;
-            font-family: "montserrat";
-            background-image: linear-gradient(125deg,#2c3e50,#27ae60,#2980b9,#e74c3c,#8e44ad);
-            background-size: 400%;
-            animation: bganimation 15s infinite;
+        body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #f17C58, #e94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
+            background-size: 600% 100%;
+            animation: gradient 16s linear infinite;
+            animation-direction: alternate;
         }
 
 
-        @keyframes bganimation {
+        @keyframes gradient {
             0%{
-                background-position: 0% 50%;
-            }
-            50%{
-                background-position: 100% 50%;
+                background-position: 0%
             }
             100%{
-                background-position: 0% 50%;
+                background-position: 100%;
             }
         }
+
     </style>
 </head>
 <body>
@@ -47,7 +45,7 @@
     <script>alert("${info}");window.location.href="recordlist.html"</script>
 </c:if>
 
-<div style="position: relative;top: 15%">
+<div style="position: relative;top: 5%">
 <c:if test="${!empty succ}">
     <div class="alert alert-success alert-dismissable">
         <button type="button" class="close" data-dismiss="alert"
@@ -92,19 +90,26 @@
                             <tr>
                                 <td><c:out value="${alog.reader_id}"></c:out></td>
                                 <td><c:out value="${alog.seat_id}"></c:out></td>
-                                <td><fmt:formatDate value="${alog.start_time}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
-                                 <td><fmt:formatDate value="${alog.end_time}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
-                                 <td><fmt:formatDate value="${alog.sign_time}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
+                                <td><fmt:formatDate value="${alog.start_time}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                                 <td><fmt:formatDate value="${alog.end_time}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                                 <td><fmt:formatDate value="${alog.sign_time}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                                  <c:set var="flag" value="false"/>
                                  <c:set var="flag2" value="false"/>
+                                 <c:set var="flag3" value="false"/>
                                  <c:forEach var="exceed" items="${exceedRecord}">
                                          <c:if test="${exceed.record_id eq alog.record_id}">
                                                <c:set var="flag" value="true"/>
                                          </c:if>
                                      </c:forEach>
+
                                      <c:forEach var="unSign" items="${unSignedRecord}">
                                          <c:if test="${unSign.record_id eq alog.record_id}">
                                              <c:set var="flag2" value="true"/>
+                                          </c:if>
+                                     </c:forEach>
+                                     <c:forEach var="allUnSign" items="${allUnSignedTime}">
+                                          <c:if test="${allUnSign.record_id eq alog.record_id}">
+                                              <c:set var="flag3" value="true"/>
                                           </c:if>
                                      </c:forEach>
                                      <c:if test="${flag}">
@@ -112,16 +117,28 @@
                                          </c:if>
                                          <c:if test="${not flag}">
                                          <c:if test="${flag2}">
+                                         <c:if test="${not flag3}">
                                            <td><font style="color: blue">未签到</font></td>
                                          </c:if>
                                          </c:if>
-                                         <c:if test="${not flag}">
-                                              <c:if test="${not flag2}">
-                                                    <td><font style="color: green">完成</font></td>
-                                              </c:if>
                                          </c:if>
+                                         <c:if test="${not flag}">
+                                         <c:if test="${not flag2}">
+                                          <c:if test="${flag3}">
+                                             <td><font style="color: red">未到时</font></td>
+                                          </c:if>
+                                          </c:if>
+                                          </c:if>
+                                           <c:if test="${not flag}">
+                                             <c:if test="${not flag2}">
+                                           <c:if test="${not flag3}">
+                                              <td><font style="color: green">完成</font></td>
+                                           </c:if>
+                                           </c:if>
+                                           </c:if>
+
                                 <td>
-                                <c:forEach var="exceed" items="${exceedRecord}">
+                                                                    <c:forEach var="exceed" items="${exceedRecord}">
                                                                          <c:if test="${exceed.record_id eq alog.record_id}">
                                                                                <c:set var="flag" value="true"/>
                                                                          </c:if>
@@ -131,16 +148,27 @@
                                                                                <c:set var="flag2" value="true"/>
                                                                            </c:if>
                                                                        </c:forEach>
-
+                                                                          <c:forEach var="allUnSign" items="${allUnSignedTime}">
+                                                                              <c:if test="${allUnSign.record_id eq alog.record_id}">
+                                                                                    <c:set var="flag3" value="true"/>
+                                                                              </c:if>
+                                                                          </c:forEach>
                                                                        <c:if test="${flag2}">
                                                                        <c:if test="${not flag}">
-
                                                                            <td><a href="record_sign_do.html?record_id=<c:out value="${alog.record_id}"></c:out>">
                                                                                <button type="button" class="btn btn-primary btn-xs">签到</button>
                                                                            </a></td>
                                                                        </c:if>
                                                                        </c:if>
-
+                                                                       <c:if test="${not flag}">
+                                                                                                                <c:if test="${not flag2}">
+                                                                                                                 <c:if test="${flag3}">
+                                                                           <td><a href="record_sign_do.html?record_id=<c:out value="${alog.record_id}"></c:out>">
+                                                                               <button type="button" class="btn btn-default btn-xs">未到时</button>
+                                                                           </a></td>
+                                                                       </c:if>
+                                                                       </c:if>
+                                                                       </c:if>
                                                                        <c:if test="${not flag2}">
                                                                        <c:if test="${flag}">
                                                                                <td>
@@ -150,10 +178,11 @@
                                                                        </c:if>
                                                                      <c:if test="${not flag2}">
                                                                          <c:if test="${not flag}">
+                                                                         <c:if test="${not flag3}">
                                                                                  <td>
                                                                                      <button type="button" class="btn btn-default btn-xs">已签到</button>
                                                                                  </td>
-
+                                                                                 </c:if>
                                                                          </c:if>
                                                                          </c:if>
 

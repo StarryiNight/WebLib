@@ -1,0 +1,27 @@
+
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(†¼Å 8¸ûšé¡/
+
+java:S1319("pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ğÜ8¸ûšé¡/
+
+java:S1319/"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÂËÜ8¸ûšé¡/
+
+java:S13198"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(˜âÕı8¸ûšé¡/
+
+java:S1319="pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Èµùğ8¸ûšé¡/
+’
+java:S1319B"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÔƒÊıÿÿÿÿ8¸ûšé¡/
+
+java:S1319G"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¾ƒ®´8¸ûšé¡/
+
+java:S1319L"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÒÉÍõ8¸ûšé¡/
+Q
+java:S1128"4Remove this unused import 'com.library.bean.Moment'.(áèØÜ8ºûšé¡/
+g
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ã¥øÿÿÿÿ8¼ûšé¡/
+W
+java:S6213":Rename this variable to not match a restricted identifier.( ¿ÉÆ8½ûšé¡/
+\
+java:S6213 ":Rename this variable to not match a restricted identifier.(¾Ôş´üÿÿÿÿ8½ûšé¡/
+\
+java:S62134":Rename this variable to not match a restricted identifier.(ÒÔëÄÿÿÿÿÿ8¾ûšé¡/

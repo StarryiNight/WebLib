@@ -1,0 +1,59 @@
+var url = 'http://localhost:8080/';
+var admin = {
+    login: url + 'login.html';
+    admin_main: url + 'admin_main.html';
+    admin_announcement_add: url + 'announcement_add.html'
+    admin_announcement_edit: url + 'updateannouncementk.html?announcement_id=#';
+    admin_announcement_detail: url + 'admin_announcement_detail.html?announcement_id=#'
+    deleteannouncement: url + 'deleteannouncement.html?announcement_id=#'
+    admin_books: url + 'admin_books.html';
+    admin_book_add: url + 'book_add.html';
+    admin_book_edit: url + 'updatebook.html?bookId=#';
+    admin_book_detail: url + 'admin_book_detail.html?bookId=#'
+    deletebook: url + 'deletebook.html?bookId=#'
+    admin_readers: url + 'allreaders.html';
+    admin_reader_add: url + 'reader_add.html';
+    admin_reader_edit: url + 'updatereader.html?readerId=#';
+    reader_delete: url + 'reader_delete.html?readerId=#'
+    admin_room_list: url + 'admin_room_list.html';
+    admin_room_add: url + 'room_add.html';
+    admin_room_edit: url + 'updateroom.html?room_id=#';
+    admin_room_detail: url + 'admin_room_seats.html?room_id=#';
+    deleteroom: url + 'deleteroom.html?room_id=#';
+    admin_seat_list: url + 'admin_seat_list.html';
+    admin_seat_add: url + 'seat_add.html';
+    admin_seat_edit: url + 'updateseat.html?seat_id=#';
+    admin_seat_detail: url + 'admin_moment_list.html?seat_id=#';
+    deleteseat: url + 'deleteseat.html?seat_id=#';
+    admin_all_moment_list: url + 'admin_all_moment_list.html';
+    admin_moment_list: url + 'admin_moment_list.html';
+    admin_moment_add: url + 'moment_add.html';
+    admin_moment_edit: url + 'updatemoment.html?seat_id=#';
+    deletemoment: url + 'deletemoment.html?moment_id=#';
+    admin_lend_list: url + 'lendlist.html';
+    admin_record_list: url + 'admin_record_list.html';
+    admin_record_add: url + 'record_add.html';
+    admin_record_edit: url + 'updaterecord.html?record_id=#';
+    admin_record_detail: url + 'admin_record_list.html?record_id=#';
+    admin-repasswd: url + 'admin_repasswd.html';
+}
+var reader = {
+    login: url + 'login.html';
+    reader_main: url + 'reader_main.html';
+    reader_announcement_detail: url + 'reader_announcement_detail.html?announcement_id=#'
+    reader_books: url + 'reader_books.html';
+    lendbook: url + 'lendbook.html?bookId=#';
+    returnbook: url + 'returnbook.html?bookId=#';
+    reader_book_detail: url + 'reader_book_detail.html?bookId=#'
+    reader_info: url + 'reader_info.html';
+    reader_info_edit: url + 'reader_info_edit.html';
+    reader_room_list: url + 'reader_room_list.html';
+    reader_room_detail: url + 'reader_room_seats.html?room_id=#';
+    reader_seat_list: url + 'reader_seat_list.html';
+    reader_seat_detail: url + 'reader_moment_list.html?seat_id=#';
+    myrecord: url + 'myrecord.html';
+    reader_moment_list: url + 'reader_moment_list.html';
+    reader_lend_list: url + 'mylend.html';
+    reader_record_list: url + 'reader_record_list.html';
+    reader-repasswd: url + 'reader_repasswd.html';
+}

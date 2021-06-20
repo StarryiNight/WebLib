@@ -1,0 +1,30 @@
+
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(†¼Å 8­éé¡/
+’
+java:S1319F"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÕÎÍÒûÿÿÿÿ8­éé¡/
+’
+java:S1319L"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(üà‘œûÿÿÿÿ8­éé¡/
+’
+java:S1319_"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ğÎÚüÿÿÿÿ8­éé¡/
+’
+java:S1319c"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¡Ø„Ôşÿÿÿÿ8­éé¡/
+
+java:S1319g"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Èµùğ8­éé¡/
+
+java:S1319k"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¾ƒ®´8­éé¡/
+
+java:S1319o"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÒÉÍõ8¸üé¡/
+r	java:S1176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âÃçÂşÿÿÿÿ8¯éé¡/
+r	java:S117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕÎÍÒûÿÿÿÿ8¯éé¡/
+r	java:S117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üà‘œûÿÿÿÿ8¯éé¡/
+r	java:S117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğÎÚüÿÿÿÿ8¯éé¡/
+r	java:S117c"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡Ø„Ôşÿÿÿÿ8ºüé¡/
+\
+java:S6213":Rename this variable to not match a restricted identifier.(›§ªşÿÿÿÿ8³éé¡/
+V
+java:S6213:":Rename this variable to not match a restricted identifier.(Öğşn8¶éé¡/
+V
+java:S6213>":Rename this variable to not match a restricted identifier.(£À§8·éé¡/
+W
+java:S6213B":Rename this variable to not match a restricted identifier.(×Ï¸ö8·éé¡/

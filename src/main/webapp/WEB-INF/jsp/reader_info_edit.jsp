@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
     <title>${readercard.name}的主页</title>
@@ -61,6 +63,7 @@
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">生日</span>
+
                     <input type="text" class="form-control" name="birth" id="birth"  value="${readerinfo.birth}" >
                 </div>
                 <div class="input-group">

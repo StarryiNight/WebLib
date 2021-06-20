@@ -119,7 +119,7 @@ padding-left: 110px !important;
 
                                 <td><c:out value="${announcement.time}"></c:out></td>
                 <td><a href="updateannouncement.html?announcement_id=<c:out value="${announcement.id}"></c:out>"><button type="button" style="width:35px; float:right;" class="btn btn-info btn-xs">编辑</button></a></td>
-                <td><a href="deleteannouncement.html?announcement_id=<c:out value="${announcement.id}"></c:out>"><button type="button" style="width:35px; float:right;" class="btn btn-danger btn-xs">删除</button></a></td>
+                <td><a href="deleteannouncement.html?announcementId=<c:out value="${announcement.id}"></c:out>"><button type="button" style="width:35px; float:right;" class="btn btn-danger btn-xs">删除</button></a></td>
             </tr>
             </c:forEach>
 

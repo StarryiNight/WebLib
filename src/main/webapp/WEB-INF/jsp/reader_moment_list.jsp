@@ -14,21 +14,22 @@
         $(function () {
             $('#header').load('reader_header.html');
         })
-        var test = window.location.search;
 
+             var name = window.location.search;
+             var newName = name.slice(1,11)
     </script>
     <style type="text/css">
         html,body{
             height:100%;
         }
-        body{
-            margin: 0;
-            padding: 0;
-            font-family: "montserrat";
-            background-image: linear-gradient(125deg,#2c3e50,#27ae60,#2980b9,#e74c3c,#8e44ad);
-            background-size: 400%;
-            animation: bganimation 15s infinite;
-        }
+         body {
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(45deg, #f17C58, #e94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
+                    background-size: 600% 100%;
+                    animation: gradient 16s linear infinite;
+                    animation-direction: alternate;
+                }
         @keyframes bganimation {
             0%{
                 background-position: 0% 50%;
@@ -43,6 +44,10 @@
     </style>
 </head>
 <body >
+    <script>
+    var name = window.location.search;
+    var newName = name.slice(1,13)
+    </script>
 <div id="header"></div>
 
 <div style="position: relative;padding-top: 100px">
@@ -86,12 +91,13 @@
             </thead>
 
             <tbody>
+
             <c:forEach items="${allMoments}" var="alog">
 
                 <tr>
 
-                    <td><fmt:formatDate value="${alog.start_moment}" pattern=" hh:mm:ss"/></td>
-                     <td><fmt:formatDate value="${alog.end_moment}" pattern=" hh:mm:ss"/></td>
+                    <td><fmt:formatDate value="${alog.start_moment}" pattern=" HH:mm:ss"/></td>
+                     <td><fmt:formatDate value="${alog.end_moment}" pattern=" HH:mm:ss"/></td>
 
                      <c:set var="flag" value="false"/>
                      <c:set var="flag2" value="false"/>
@@ -100,27 +106,55 @@
                                    <c:set var="flag" value="true"/>
                              </c:if>
                          </c:forEach>
-
-                         <c:if test="${flag}">
-                           <td><font style="color: red">无法预定</font></td>
+                        <c:forEach var="exceed" items="${exceedMoment}">
+                             <c:if test="${exceed.moment_id eq alog.moment_id}">
+                                   <c:set var="flag2" value="true"/>
                              </c:if>
-                             <c:if test="${not flag}">
-
-                               <td><font style="color: green">可以预定</font></td>
-
-                             </c:if>
-                   <td>
-
-                         <c:if test="${not flag}">
-                            <td><a href="record_add_do.html?moment_id=<c:out value="${alog.moment_id}"></c:out>"><button type="button" class="btn btn-primary btn-xs">预定</button></td>
+                         </c:forEach>
+                         <c:if test="${flag2}">
+                           <td><font style="color: red">已经过时</font></td>
                          </c:if>
+
+                             <c:if test="${not flag2}">
+                             <c:if test="${flag}">
+                               <td><font style="color: red">无法预定</font></td>
+                             </c:if>
+                             </c:if>
+
+                             <c:if test="${not flag2}">
+                             <c:if test="${not flag}">
+                                  <td><font style="color: green">可以预定</font></td>
+                             </c:if>
+                             </c:if>
+                      <td>
+
+                         <c:if test="${not flag2}">
+                         <c:if test="${not flag}">
+                            <td><a href="record_add_do.html?moment_id=<c:out value="${alog.moment_id}"></c:out>"><button type="button" class="btn btn-primary btn-xs">预定</button></a></td>
+                             <script>
+
+                                                var a = document.getElementsByTagName('a')[0];
+                                                var url = a.getAttribute('href');
+
+                                                url = url + '&&' + newName;
+                                                a.setAttribute('href', url);
+
+                                            </script>
+                         </c:if>
+                         </c:if>
+                         <c:if test="${flag2}">
+                             <td><button type="button" class="btn btn-default btn-xs" disabled="disabled">预定</button></td>
+                         </c:if>
+                         <c:if test="${not flag2}">
                          <c:if test="${flag}">
                              <td><button type="button" class="btn btn-default btn-xs" disabled="disabled">预定</button></td>
                          </c:if>
-                         </a>
+                         </c:if>
+
                     </td>
                 </tr>
             </c:forEach>
+
             </tbody>
         </table>
     </div>

@@ -38,10 +38,6 @@
                 background-position: 0% 50%;
             }
         }
-        #mainPanel {
-            margin: auto;
-            width: 1000px;
-        }
     </style>
 </head>
 <body >

@@ -17,14 +17,14 @@
         html,body{
             height:100%;
         }
-        body{
-            margin: 0;
-            padding: 0;
-            font-family: "montserrat";
-            background-image: linear-gradient(125deg,#2c3e50,#27ae60,#2980b9,#e74c3c,#8e44ad);
-            background-size: 400%;
-            animation: bganimation 15s infinite;
-        }
+         body {
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(45deg, #f17C58, #e94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
+                    background-size: 600% 100%;
+                    animation: gradient 16s linear infinite;
+                    animation-direction: alternate;
+                }
 
 
         @keyframes bganimation {

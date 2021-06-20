@@ -19,14 +19,13 @@
             height:100%;
         }
         body {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #f17C58, #e94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
-            background-size: 600% 100%;
-            animation: gradient 16s linear infinite;
-            animation-direction: alternate;
-        }
-
+                   width: 100%;
+                   height: 100%;
+                   background: linear-gradient(45deg, #f17C58, #e94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
+                   background-size: 600% 100%;
+                   animation: gradient 16s linear infinite;
+                   animation-direction: alternate;
+               }
 
         @keyframes gradient {
             0%{

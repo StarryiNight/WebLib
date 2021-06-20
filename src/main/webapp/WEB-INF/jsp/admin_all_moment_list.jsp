@@ -62,7 +62,8 @@
         </div>
     </c:if>
 </div>
-<div class="panel panel-default" style="width: 90%;margin-left: 5%">
+<center >
+<div class="panel panel-default" style="width: 60%;margin-left: 5%">
     <div class="panel-heading">
         <h3 class="panel-title">
             时刻表
@@ -84,8 +85,8 @@
             <c:forEach items="${allMoments}" var="alog">
                 <tr>
 
-                    <td><fmt:formatDate value="${alog.start_moment}" pattern=" hh:mm:ss"/></td>
-                     <td><fmt:formatDate value="${alog.end_moment}" pattern=" hh:mm:ss"/></td>
+                    <td><fmt:formatDate value="${alog.start_moment}" pattern=" HH:mm:ss"/></td>
+                     <td><fmt:formatDate value="${alog.end_moment}" pattern=" HH:mm:ss"/></td>
 
                      <c:set var="flag" value="false"/>
                      <c:set var="flag2" value="false"/>
@@ -118,6 +119,6 @@
         </table>
     </div>
 </div>
-
+</center>
 </body>
 </html>

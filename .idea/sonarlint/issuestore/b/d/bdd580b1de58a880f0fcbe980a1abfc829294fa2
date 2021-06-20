@@ -1,0 +1,10 @@
+
+cWeb:DoctypePresenceCheck":Insert a <!DOCTYPE> declaration to before this <html> tag.(œ÷Ãûÿÿÿÿ
+Z	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ
+ZWeb:UnsupportedTagsInHtml5CheckA"(Remove this deprecated "center" element.(¡á€Ò8µª¦·¢/
+TWeb:TableWithoutCaptionCheckI" Add a description to this table.(­ã’Òÿÿÿÿÿ8“â¦·¢/
+n Web:TableHeaderHasIdOrScopeCheckM";Add either an 'id' or a 'scope' attribute to this <th> tag.(Ô²é°8“â¦·¢/
+n Web:TableHeaderHasIdOrScopeCheckN";Add either an 'id' or a 'scope' attribute to this <th> tag.(¢ŠÂì8“â¦·¢/
+n Web:TableHeaderHasIdOrScopeCheckP";Add either an 'id' or a 'scope' attribute to this <th> tag.(ºÉš¨8“â¦·¢/
+]Web:UnsupportedTagsInHtml5Checkd"&Remove this deprecated "font" element.(ğÉä©ùÿÿÿÿ8“â¦·¢/
+]Web:UnsupportedTagsInHtml5Checkh"&Remove this deprecated "font" element.(Ö€½îüÿÿÿÿ8“â¦·¢/

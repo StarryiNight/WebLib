@@ -1,0 +1,28 @@
+
+h
+java:S1192*"FDefine a constant instead of duplicating this literal "error" 4 times.(€ì¶Şüÿÿÿÿ8•ûšé¡/
+g
+java:S11921"JDefine a constant instead of duplicating this literal "record_id" 4 times.(£öïø8–ûšé¡/
+i
+java:S11924"GDefine a constant instead of duplicating this literal "detail" 3 times.(ÔŞŸ—üÿÿÿÿ8–ûšé¡/
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë’³ß8—ûšé¡/
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í›üøÿÿÿÿ8—ûšé¡/
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊªÖùÿÿÿÿ8—ûšé¡/
+m	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£öïø8—ûšé¡/
+m	java:S117D"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£öïø8—ûšé¡/
+m	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£öïø8—ûšé¡/
+m	java:S117X"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£öïø8—ûšé¡/
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8˜ûšé¡/
+W
+java:S6213!":Rename this variable to not match a restricted identifier.(²˜¹ú8Ÿûšé¡/
+\
+java:S62132":Rename this variable to not match a restricted identifier.(Æ½×”úÿÿÿÿ8 ûšé¡/
+W
+java:S62139":Rename this variable to not match a restricted identifier.(èüë¬8¡ûšé¡/
+\
+java:S6213P":Rename this variable to not match a restricted identifier.(Æ½×”úÿÿÿÿ8£ûšé¡/
+\
+java:S6213Y":Rename this variable to not match a restricted identifier.(Æ½×”úÿÿÿÿ8£ûšé¡/
+\
+java:S6213~":Rename this variable to not match a restricted identifier.(±ùÁıÿÿÿÿ8¥ûšé¡/

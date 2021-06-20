@@ -1,3 +1,4 @@
+
 <%@ page contentType="text/html;charset=UTF-8"  language="java"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -16,7 +17,6 @@
       outline: none;
       /* 让输入框被选中后没有默认框框 */
     }
-
     body{
        margin: 0;
         padding: 0;
@@ -33,26 +33,24 @@
       width: 400px;
       height: 450px;
       border-radius: 30px;
-
       /* 一种水平+垂直的居中定位方式 */
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       /* 这个比上次人工队计算宽高一半要好 */
-
       /* 注入灵魂 */
       backdrop-filter: blur(3px);
       border-left: 2px solid rgba(255, 255, 255, .3);
       border-top: 2px solid rgba(255, 255, 255, .3);
       box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);
       text-align: center;
-
     }
-
+    .Mywidth{
+        width:40px !important;
+    }
     h1{
       margin: 20px;
-
       font-weight: 400;
       /* 毛玻璃的话，标题比扁平 字重小一点为好 */
       font-size: 88px;
@@ -63,8 +61,10 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
       opacity: 0.9;
     }
-
-    input{
+    p {
+        margin: -60px 40px 10px;
+    }
+    .zz{
       border: none;
       width: 80%;
       font-size: 22px;
@@ -72,13 +72,11 @@
       margin-bottom: 32px;
       border-radius: 16px;
       background-color: transparent;
-
       /* 注入灵魂 */
       backdrop-filter: blur(3px);
       border-left: 2px solid rgba(255, 255, 255, .3);
       border-top: 2px solid rgba(255, 255, 255, .3);
       box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
-
       text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
       font-family: "Berlin Sans FB";
       color: white;
@@ -89,7 +87,6 @@
       color: white;
       opacity: 0.8;
     }
-
     .btn{
       width: 240px;
       font-size: 34px;
@@ -97,7 +94,6 @@
       margin-top: 10px;
       cursor: pointer;
     }
-
     input:focus{
       border: none;
       background-color: rgba(255, 255, 255, .1);
@@ -119,15 +115,15 @@
 <div  id="login">
 
     <h1 class="tt">图 书 馆</h1>
-        <input type="text" class="zz" id="id" placeholder="用户名">
-        <input type="password" class="zz" id="passwd" placeholder="密码">
+        <input class="zz" type="text"  id="id" placeholder="用户名">
+        <input class="zz" type="password"  id="passwd" placeholder="密码">
         <div class="checkbox text-left">
             <label>
-                <input type="checkbox" id="remember">记住密码
+                <input class="Mywidth" type="checkbox" id="remember">记住密码
             </label>
         </div>
         <p style="text-align: right;color: red;position: absolute" id="info"></p>
-        <input type="submit" id="loginButton" class="btn tt" value="登 录" >
+        <input class="zz" type="submit" id="loginButton" class="btn tt" value="登 录" >
 </div>
     <script>
         $("#id").keyup(
@@ -161,7 +157,6 @@
                 } catch (__) {}
             }
         }
-
         // 设置登录信息
         setLoginStatus();
         $("#loginButton").click(function () {
@@ -198,15 +193,14 @@
                                 Cookies.remove('loginStatus');
                             }
                             window.location.href="reader_main.html";
-
                         }
                     }
                 });
             }
         })
-
     </script>
 </div>
 
 </body>
 </html>
+

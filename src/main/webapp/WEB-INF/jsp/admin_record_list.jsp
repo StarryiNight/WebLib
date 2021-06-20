@@ -85,9 +85,9 @@
                 <tr>
                     <td><c:out value="${alog.reader_id}"></c:out></td>
                     <td><c:out value="${alog.seat_id}"></c:out></td>
-                    <td><fmt:formatDate value="${alog.start_time}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
-                     <td><fmt:formatDate value="${alog.end_time}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
-                     <td><fmt:formatDate value="${alog.sign_time}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
+                    <td><fmt:formatDate value="${alog.start_time}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                     <td><fmt:formatDate value="${alog.end_time}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                     <td><fmt:formatDate value="${alog.sign_time}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                      <c:set var="flag" value="false"/>
                      <c:set var="flag2" value="false"/>
                      <c:forEach var="exceed" items="${exceedRecord}">

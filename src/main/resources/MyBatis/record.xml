@@ -46,7 +46,7 @@
         select * from record where now()&lt;=end_time and NOW()>=start_time
                                and sign_time is  null
     </select>
-    <select id="allUnSignedTime" resultType="com.library.bean.Record" parameterType="long">
+    <select id="allUnSignedTime" resultType="com.library.bean.Record">
         select * from record where now()&lt;=end_time and NOW()&lt;start_time
                                and sign_time is  null
     </select>

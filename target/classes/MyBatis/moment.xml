@@ -33,4 +33,8 @@
         or start_moment &lt; (select DATE_FORMAT(end_time,'%H:%i:%s') from record where record_id =#{record_id})
         and end_moment>=(select DATE_FORMAT(end_time,'%H:%i:%s') from record where record_id=#{record_id})
     </select>
+    <select id="exceedMoment" resultType="com.library.bean.Moment">
+        select * from moment
+        where end_moment&lt;now();
+    </select>
 </mapper>
